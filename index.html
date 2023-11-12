@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarieJoise</title>
+    <!-- ICONO -->
+    <link rel="shortcut icon" href="./src/favicon2.png" type="image/x-icon">
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- LINK ESTILOS -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!-- HL JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+  </head>
+  <body>
+    <!-- FUTURE NAV -->
+      <nav class="navbar-expand-md bg-dark d-flex">
+        <a href="#" class="navbar-brand fs-3 ms-4">MarieJoise<img class="logo--img" src="./src/favicon2.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="btn">
+          <ul class="navbar-nav ms-auto me-3">
+            <li class="nav-item"><a href="index.html" class="nav-link mx-2">Jugar</a></li>
+            <li class="nav-item"><a href="#" class="nav-link mx-2">Razas</a></li>
+            <li class="nav-item"><a href="#" class="nav-link ms-2 me-1">Historia</a></li> 
+          </ul>
+        </div>
+      </nav>
+    <!-- MAIN SECTION -->
+    <main class="main__contenedor">
+      <div class="div__contenedor">
+        <h1 class="text-center mb-lg-4 mt-lg-4 fw-bold">Bienvenido a MarieJoise</h1>
+      <p class="bg-dark text-white p-3 text__div-center">
+                <code>&lt;&lt;&lt; MarieJoise, un lugar donde la tranquilidad y el que hacer cotidiano hace ya un buen tiempo, nada tienen que ver con la violencia. Adentraté en MarieJoise y descubrí como la magía, las posesiones y los heroes resurgen en tiempos modernos. Un mundo por re-descubrir...  &gt;&gt;&gt;</code>
+        <a name="SesionButtonXmpl" id="ButonSesion" class="btn btn-primary text-center btn-inp mt-4" href="index.html" role="button">
+          Comenza a jugar ahora!
+        </a>
+      </p>
+      </div>
+
+    </main>
+  
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+      <a href="#" class=" text-white-50 text-decoration-none align-items-center">
+          MarieJoise, 2023 &copy; Brian Benegas
+      </a>
+</footer>
+  </body>
+  <!-- SCRIPTS -->
+  <script src="/js/login.js" defer></script>
+  <script src="/js/main.js"></script>
+  <!-- hl script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+  <script>
+    hljs.highlightAll();
+  </script>
+</html>
