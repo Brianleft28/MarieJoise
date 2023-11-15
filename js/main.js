@@ -1,17 +1,22 @@
-// declaramos nuestro personaje y le asignamos un valor
+// let personaje = []
 
-let personaje = []
+// en vez de hacer que el personaje sea un array, voy a hacer que sea un objeto 
+//que contenga información sobre el personaje, incluido el nombre, la raza y los atributos:
 
-/* let nuevoPersonaje = document.getElementByID('newCharachter') */
+let personaje = {
+    nombre: "",
+    raza:{},
+    atributos:{},
+}
 
-function crearPersonaje(nombre){
-    let name = prompt("Ingrese su nuevo nombre de personaje")
-    if (name) {
-        personaje.push(name)
-        //////////////
-        //////////////////////// SALUDO AL PERSONAJE ////////////////
-        //                       EN CONSOLA Y ALERT                         
-        console.log('Hola ' + personaje[0] + ', bienvenido a MarieJoise')
+// y en vez hacer un push al array personaje, voy a crear una función que asigne de alguna manera
+// el nombre, la raza y los atributos al objeto de personaje
+
+
+function inicializarPersonaje(){
+    personaje.nombre = prompt("Ingrese el nombre de su personaje")
+    if (personaje.nombre) {
+        console.log('Hola ' + personaje.nombre + ', bienvenido a MarieJoise')
         ///// historia en consola /// 
         console.log('-----------------------------------------------------')
         console.log('Una tierra pacifica donde el cantar de las aves y la tranquilidad son nuestro pan de cada día.')
@@ -20,6 +25,7 @@ function crearPersonaje(nombre){
 }
 
 // definimos el array de razas que existen en nuestro mundo
+// Se seguira manteniendo este array con objetos y propiedades de raza
 const razas = [
     {
        nombre: 'Humano',
@@ -104,67 +110,32 @@ const razas = [
         Agi: 5, //Agilidad
         Stealth: 5 //Sigilo
     }       
-    ]              // / //
-                 
+    ]           
 /// Elegiremos una raza para nuestro personaje /// 
-function elegirRaza (){
-        let raza = prompt('Elegí una raza para tu personaje \r\r1-Humano\r2-Ogro\r3-Elfo\r4-Alto Elfo\r5-Elfo oscuro\r6-Demonio\r7-Celestial\r\r0 para más información sobre las razas\r')
-   
-    // Humano
-        if (raza == 1){
-    const human = razas.filter(r => r.nombre === 'Humano');
-    console.log('La raza de ' + personaje + ' es: Humano')
-    console.table(human)
-} 
-    // Ogro
-        else if (raza == 2 ){
-    const ogro = razas.filter(r => r.nombre === 'Ogro');
-    console.log('La raza de ' + personaje + ' es: Ogro')
-    console.table(ogro)
-} 
-    // Elfo
-        else if (raza == 3){
-    const elfo = razas.filter(r => r.nombre === 'Elfo');
-    console.log('La raza de ' + personaje + ' es: Elfo')
-    console.table(elfo)
-}
-    // Alto Elfo
-        else if (raza == 4){
-    const altoElfo = razas.filter(r => r.nombre === 'Alto Elfo');
-    console.log('La raza de ' + personaje + ' es: Alto Elfo')
-    console.table(altoElfo)
-}
-    // Elfo Oscuro
-        else if (raza == 5){
-    const elfoOscuro = razas.filter(r => r.nombre === 'Elfo Oscuro');
-    console.log('La raza de ' + personaje + ' es: Elfo Oscuro')
-    console.table(elfoOscuro)
-}
-    // Demonio
-        else if (raza == 6){
-    const demonio = razas.filter(r => r.nombre === 'Demonio');
-    console.log('La raza de ' + personaje + ' es: Demonio')
-    console.table(demonio)
-}
-    // Celestial
-        else if (raza == 7){
-    const elfo = razas.filter(r => r.nombre === 'Celestial');
-    console.log('La raza de ' + personaje + ' es: Celestial')
-    console.table(celestial)
+
+// todo el codigo que use anteriormente, lo voy a dejar en un JS llamado elegirRazaViejo
+// ya que encontré una manera para optimizar la eleccion de raza y no quiero perder el
+// primer intento intuitivo
+
+function elegirRaza(){
+    let razaIndex = prompt('Elegí una raza para tu personaje...\n1-Humano\n2-Ogro\n3-Elfo\n4-Alto Elfo\n5-Elfo oscuro\n6-Demonio\n7-Celestial\n\n0 para más información sobre las razas')
+         // si razaIndex es mayor que 1 y menos que el numero de objetos que tenemos en el array
+        if (razaIndex >= 1 && razaIndex <= razas.length) {
+        // personaje.raza = "" ahora es igual a razaIndex - 1, porque el array comienza en 0     
+            personaje.raza = razas[razaIndex - 1]
+            console.log('La raza de '+ personaje.nombre + ' es: ' + personaje.raza.nombre);
+            console.log('Información de personaje:')
+            console.table(personaje + personaje.raza)
+        // Si el usuario ingresa 0, se muestra información sobre todas las razas
+        } else if(razaIndex == 0) { 
+            console.log('Acá tenes información sobre la estadistica de cada raza:');
+            console.table(razas);
+        } else {
+            alert('Ingresa una opción válida')
+        }
 }
 
-else if (raza == 0) {
-    console.log('Acá tenes información sobre las estadisticas base de cada una de las razas:')
-    console.table(razas)
-
- } else {
-    Alert('Ingresa una opción válida.')
- }
-}
-
-    
-
-crearPersonaje()
+inicializarPersonaje()
 elegirRaza()
 // console.log(personaje) Empujo el nombre que creo en la funcion al array de personajes, así existe fuera de la función. //
 
