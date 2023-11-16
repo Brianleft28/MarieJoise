@@ -217,7 +217,7 @@ startGame.addEventListener('click', ()=> {
 
 function mostrarMensaje(mensaje, elementoId) {
   const outputDiv = document.getElementById(elementoId);
-  outputDiv.innerHTML += `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`;
+  outputDiv.innerHTML += `<p class="p-2 text-center bg-dark text-white mt-5">${mensaje}</p>`;
 }
 
 
@@ -233,7 +233,7 @@ btnCrearPj.addEventListener('click', ()=>{
 
   titulo.innerHTML = 'Elije una raza para tu personaje'
 
-  mostrarMensaje('Hola ' + personaje.nombre + ', bienvenido a MarieJoise. Selecciona tu raza tocando el boton de abajo:')
+  mostrarMensaje('Hola ' + personaje.nombre + ', bienvenido a MarieJoise. Un mundo tranquilo donde la paz reina sobre todos los rincones. <br\> Selecciona tu raza tocando el boton de abajo:', 'output')
 
 })
 
