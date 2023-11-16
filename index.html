@@ -58,27 +58,33 @@
       <input id="inputName" type="text" class="input-group-text" placeholder="Ingrese un nombre">
     <!-- DIV DE INFORMACIÓN Y DEMÁS -->
     <div id="output" class="text-center bg-dark text-white mt-5"></div> 
-    <div id="output2" class="text-center bg-dark text-white mt-5"></div> 
+    <div id="output2" class="text-center bg-dark text-white mt-3 px-2"></div> 
 
     <!-- BOTONES E INPUTS -->
     <button type="button" id="start" class="btn btn-primary start_game">Iniciar Juego</button>
     <button type="button" id="crearPersonaje" class="btn btn-primary mt-2">Crear personaje</button>
     <button type="button" id="elegirRaza"class="btn btn-primary mt-3">Elegir raza del personaje</button>
+    <button type="button" id="continuarJuego" class="btn btn-primary mt-2" style="display: none;">Continuar Juego</button>
+        <!-- INPUT DE RAZA -->
+
+    <!-- PARA DESPUES -->
+
+    <form id="formClass"class="form-select-sm" style="display: none;">
+      <label class="form-select-lg">Seleccione la raza de su personaje: </label>
+      <select id="razaSelector">
+        <option value="0">Mas información de las razas</option>
+        <option value="1">Humano</option>
+        <option value="2">Ogro</option>
+        <option value="3">Elfo</option>
+        <option value="4">Alto Elfo</option>
+        <option value="5">Elfo Oscuro</option>
+        <option value="6">Demonio</option>
+        <option value="7">Celestial</option>
+      </select>
+      <button id="seleccionarRaza" type="button">Seleccionar</button>
+    </form>
     </main>
-    <!-- INPUT DE RAZA -->
-    <form style="display: none;">
-    <label class="form-select-lg" for="razaSelector">Seleccione la raza de su personaje :</label>
-    <select id="notaSelector">
-      <option value="0">Mas información de las razas</option>
-      <option value="1">Humano</option>
-      <option value="2">Ogro</option>
-      <option value="3">Elfo</option>
-      <option value="4#">Alto Elfo</option>
-      <option value="5">Elfo Oscuro</option>
-      <option value="6">Demonio</option>
-      <option value="7">Celestial</option>
-    </select>
-  </form>
+
 
     <!-- Footer -->
     <footer class="bg-dark text-light text-center py-3 d-flex justify-content-center footer-mobile-margin">

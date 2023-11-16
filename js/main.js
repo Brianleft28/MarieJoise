@@ -43,7 +43,7 @@ const razas = [
     Str: 8,
     Int: 3,
     Skill: 4,
-    Agi: 2,
+    Agli: 2,
     Stealth: 2
   },
   {
@@ -161,7 +161,7 @@ inputName.style.display = 'none';
 
 function mostrarTablaRaza(raza) {
   const tablaHTML = `
-    <table border="1">
+    <table class="text-center border="1">
       <tr>
         <th>Atributo</th>
         <th>Valor</th>
@@ -217,7 +217,7 @@ startGame.addEventListener('click', ()=> {
 
 function mostrarMensaje(mensaje, elementoId) {
   const outputDiv = document.getElementById(elementoId);
-  outputDiv.innerHTML += `<p class="p-2 text-center bg-dark text-white mt-5">${mensaje}</p>`;
+  outputDiv.innerHTML += `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`;
 }
 
 
@@ -233,16 +233,19 @@ btnCrearPj.addEventListener('click', ()=>{
 
   titulo.innerHTML = 'Elije una raza para tu personaje'
 
-  mostrarMensaje('Hola ' + personaje.nombre + ', bienvenido a MarieJoise. Un mundo tranquilo donde la paz reina sobre todos los rincones. <br\> Selecciona tu raza tocando el boton de abajo:', 'output')
+  mostrarMensaje('Hola ' + personaje.nombre + ', bienvenido a MarieJoise. Selecciona tu raza tocando el boton de abajo:', 'output')
 
 })
 
 botonElegirRaza.addEventListener('click', ()=> {
     elegirRaza();
+    let continuarJuego = document.getElementById('continuarJuego');
+    continuarJuego.style.display = 'inline'
     botonElegirRaza.style.display = 'none';
     let outputDiv = document.getElementById("output");
     outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`
-
-
     mostrarTablaRaza(personaje.raza);
 })
+
+
+////// continuar juego
