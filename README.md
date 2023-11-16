@@ -1,7 +1,10 @@
-# Marie-Joise #
-<h1>Simulador de juego de rol</h1>
 
-<p>Construido con 
+<h1># Marie-Joise #</h1>
+<h2>
+    Simulador de juego de rol: (En proceso)
+</h2>
+
+<p> Tecnologias:
     <ul>
       <li>Html</li>
       <li>Css</li>
