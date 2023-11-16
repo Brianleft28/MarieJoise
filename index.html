@@ -37,7 +37,7 @@
   <body>
     <!-- FUTURE NAV -->
       <nav class="navbar-expand-md bg-dark d-flex">
-        <a href="#" class="navbar-brand fs-3 ms-4">MarieJoise<img class="logo--img" src="./src/favicon2.png" alt="logo"></a>
+        <a href="#" class="navbar-brand fs-3 ms-5">MarieJoise<img class="logo--img" src="./src/favicon2.png" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -51,27 +51,39 @@
       </nav>
     <!-- MAIN SECTION -->
     <main class="main__contenedor">
-      <div class="div__contenedor">
-        <h1 class="text-center mb-lg-4 mt-lg-4 fw-bold">Bienvenido a MarieJoise</h1>
-      <p class="bg-dark text-white p-3 text__div-center">
-                <code>&lt;&lt;&lt; MarieJoise, un lugar donde la tranquilidad y el que hacer cotidiano hace ya un buen tiempo, nada tienen que ver con la violencia. Adentraté en MarieJoise y descubrí como la magía, las posesiones y los heroes resurgen en tiempos modernos. Un mundo por re-descubrir...  &gt;&gt;&gt;</code>
-        <a name="SesionButtonXmpl" id="ButonSesion" class="btn btn-primary text-center btn-inp mt-4" href="index.html" role="button">
-          Comenza a jugar ahora!
-        </a>
-      </p>
-      </div>
+      <h1>¡Bienvenido a MarieJoise!</h1>
+    
+      <p class="text-center" id="infoStart">Ingrese el nombre de su personaje y toque 'Crear Personaje'</p>
+    <!-- Input nombre -->
+      <input id="inputName" type="text" class="input-group-text" placeholder="Ingrese un nombre">
+    <!-- DIV DE INFORMACIÓN Y DEMÁS -->
+    <div id="output" class="text-center bg-dark text-white mt-5"></div> 
+    <div id="output2" class="text-center bg-dark text-white mt-5"></div> 
 
+    <!-- BOTONES E INPUTS -->
+    <button type="button" id="start" class="btn btn-primary start_game">Iniciar Juego</button>
+    <button type="button" id="crearPersonaje" class="btn btn-primary mt-2">Crear personaje</button>
+    <button type="button" id="elegirRaza"class="btn btn-primary mt-3">Elegir raza del personaje</button>
     </main>
-  
+    <!-- INPUT DE RAZA -->
+
+
+
     <!-- Footer -->
-    <footer class="footer bg-dark text-white">
-      <a href="#" class=" text-white-50 text-decoration-none align-items-center">
-          MarieJoise, 2023 &copy; Brian Benegas
-      </a>
+    <footer class="bg-dark text-light text-center py-3 d-flex justify-content-center footer-mobile-margin">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center">&copy; 2023 Brian Benegas</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 </footer>
   </body>
   <!-- SCRIPTS -->
   <script src="/js/main.js"></script>
+  <script src="/js/main copy.js"></script>
   <!-- hl script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
