@@ -238,6 +238,7 @@ btnCrearPj.addEventListener('click', () => {
     'output'
   )
 })
+asdasdasdas
 
 botonElegirRaza.addEventListener('click', () => {
   elegirRaza()
