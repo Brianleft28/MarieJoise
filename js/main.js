@@ -42,7 +42,7 @@ const razas = [
     Str: 8,
     Int: 3,
     Skill: 4,
-    Agli: 2,
+    Agi: 2,
     Stealth: 2,
   },
   {
@@ -161,12 +161,12 @@ inputName.style.display = 'none'
 function mostrarTablaRaza(raza) {
   const tablaHTML = `
     <table class="text-center border="1">
-      <tr>
+      <tr style: margin 10px>
         <th>Atributo</th>
         <th>Valor</th>
       </tr>
       <tr>
-        <td>Nombre</td>
+        <td>Nombre: </td>
         <td>${raza.nombre}</td>
       </tr>
       <tr>
@@ -238,7 +238,6 @@ btnCrearPj.addEventListener('click', () => {
     'output'
   )
 })
-asdasdasdas
 
 botonElegirRaza.addEventListener('click', () => {
   elegirRaza()
@@ -249,5 +248,6 @@ botonElegirRaza.addEventListener('click', () => {
   outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`
   mostrarTablaRaza(personaje.raza)
 })
+
 
 ////// continuar juego
