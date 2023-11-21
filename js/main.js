@@ -248,6 +248,28 @@ botonElegirRaza.addEventListener('click', () => {
   outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`
   mostrarTablaRaza(personaje.raza)
 })
+let continuarJuego = document.getElementById('continuarJuego')
+continuarJuego.addEventListener('click', ()=> {
+
+  titulo.innerHTML = 'Tutorial'; 
+  let outputDiv = document.getElementById('output2')
+  let outputDiv2 = document.getElementById('ouput')
+  outputDiv2.style.display = 'none';
+
+  outputDiv.innerHTML = 'El juego será una historia, a la cual cada problema será posible resolverlo de 4 maneras distintas, por ejemplo...'
+
+
+})
+
 
 
 ////// continuar juego
+
+
+
+/// continuar con el comienzo de la historia, diviendo 
+// la resolución del problema en 4 caminos posibles, con 4 
+// distintas historias
+
+// tambien tengo pensado agregar un inventario para mi personaje
+
