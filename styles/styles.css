@@ -83,3 +83,21 @@ h1 {
 .input-group-text {
     padding: 10px;
 }
+
+
+/* game */
+
+#elegirRaza {
+    order: 2
+}
+
+#formClass {
+    order: 1
+}
+
+#choises__div {
+    order: 1;
+}
+#continuarJuego {
+    order: 2;
+}

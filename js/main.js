@@ -12,7 +12,43 @@ let personaje = {
 // el nombre, la raza y los atributos al objeto de personaje
 
 function inicializarPersonaje() {
-  personaje.nombre = inputName.value
+  const inputName = document.getElementById('inputName'); 
+  if (inputName.value) {
+      const nombre = inputName.value.trim(); // Elimina espacios en blanco al principio y al final del nombre
+
+      // Verifica la longitud del nombre
+      if (nombre.length >= 3 && nombre.length <= 20) {
+          personaje.nombre = nombre;
+          // ocultamos y mostramos 
+          startGame.style.display = 'none'
+          inputName.style.display = 'none'
+          btnCrearPj.style.display = 'none'
+          ocultar.style.display = 'none'
+          botonElegirRaza.style.display = 'inline'
+          let formClass = document.getElementById('formClass')
+          formClass.style.display = 'flex'
+          // modificamos el titutlo
+          titulo.innerHTML = 'Elije una raza para tu personaje'
+          mostrarMensaje(`Nombre del personaje establecido como: ${personaje.nombre}`, 'output');
+          
+      } else {
+          titulo.innerHTML = 'Elige un nombre'
+          mostrarMensaje('El nombre debe tener entre 3 y 20 caracteres.', 'output');
+          botonElegirRaza.style.display = 'none'
+          btnCrearPj.style.display = 'inline'
+          titulo.style.display = 'inline'
+          ocultar.style.display = 'none'
+          inputName.style.display = 'inline'
+      }
+  } else {
+      titulo.innerHTML = 'Elige un nombre valido'
+      mostrarMensaje('Por favor, ingrese un nombre válido.', 'output');
+      botonElegirRaza.style.display = 'none'
+      btnCrearPj.style.display = 'inline'
+      titulo.style.display = 'inline'
+      ocultar.style.display = 'none'
+      inputName.style.display = 'inline'
+  }
 }
 
 // definimos el array de razas que existen en nuestro mundo
@@ -29,7 +65,7 @@ const razas = [
     Str: 5, //Fuerza
     Int: 8, //Inteligencia
     Skill: 5, // Destreza
-    Agli: 5, // Agilidad
+    Agi: 5, // Agilidad
     Stealth: 5, // Sigilo
   },
   {
@@ -111,6 +147,7 @@ const razas = [
 // ya que encontré una manera para optimizar la eleccion de raza y no quiero perder el
 // primer intento intuitivo
 
+<<<<<<< HEAD
 function elegirRaza() {
   let razaIndex = prompt(
     'Elegí una raza para tu personaje...\n1-Humano\n2-Ogro\n3-Elfo\n4-Alto Elfo\n5-Elfo oscuro\n6-Demonio\n7-Celestial\n\n0 para más información sobre las razas'
@@ -135,6 +172,8 @@ function elegirRaza() {
     alert('Ingresa una opción válida')
   }
 }
+=======
+>>>>>>> 201ea47bd06ac47c739f910c37feed54a7f179a6
 // funcion para mostrar una raza en una tabla html
 
 /// Comienzo del juego incoportando eventos y manipulando el DOM ///
@@ -200,7 +239,18 @@ function mostrarTablaRaza(raza) {
 
   document.getElementById('output2').insertAdjacentHTML('beforeend', tablaHTML)
 }
+
+// FUNCION PARA MOSTRAR MENSAJE, EL SEGUNDO PARAMETRO ES EL ID
+
+function mostrarMensaje(mensaje, elementoId) {
+  const outputDiv = document.getElementById(elementoId)
+  outputDiv.innerHTML = `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`
+}
+
+///////////////////////////
 ////// START SECTION //////
+///////////////////////////
+
 startGame.addEventListener('click', () => {
   // volvemos a mostrar lo necesario para el inicio y el ocultamos el boton de start
   startGame.style.display = 'none'
@@ -209,57 +259,91 @@ startGame.addEventListener('click', () => {
   btnCrearPj.style.display = 'inline'
   ocultar.style.display = 'inline'
 })
+let inputRaza = document.getElementById('classForm')
+let razaSelector = document.getElementById('razaSelector')
+ 
+function razaTime() {
+  let razaIndex = razaSelector.value
+  let razaElegida = razas[razaIndex - 1]
+  personaje.raza = razaElegida;
+  if (razaIndex == 0) {
+    mostrarMensaje('<a target="blank_"href="razas.html">Aca </a>hay informacion sobre las razas disponibles:', 'output')
+    let continuarJuego = getElementById('continuarJuego')
+    let formClass = document.getElementById('formClass')
+  } else if (razaIndex >= 0) {
 
-// FUNCION PARA MOSTRAR MENSAJE, EL SEGUNDO PARAMETRO ES EL ID
-
-function mostrarMensaje(mensaje, elementoId) {
-  const outputDiv = document.getElementById(elementoId)
-  outputDiv.innerHTML += `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`
+    mostrarMensaje(`Entonces, la raza de $[personaje.nombre] es $[personaje.raza.nombre] \n a continuación la tabla de su raza:` ,'output')
 }
+<<<<<<< HEAD
 
 
+=======
+}
+//////// BOTON HACIA ELEGIR RAZA /////////////
+>>>>>>> 201ea47bd06ac47c739f910c37feed54a7f179a6
 btnCrearPj.addEventListener('click', () => {
   inicializarPersonaje()
-  // ocultamos el boton y el texto de inicio
-  startGame.style.display = 'none'
-  inputName.style.display = 'none'
-  btnCrearPj.style.display = 'none'
-  ocultar.style.display = 'none'
-  botonElegirRaza.style.display = 'inline'
-  // modificamos el titutlo
-
-  titulo.innerHTML = 'Elije una raza para tu personaje'
-
-  mostrarMensaje(
-    'Hola ' +
-      personaje.nombre +
-      ', bienvenido a MarieJoise. Selecciona tu raza tocando el boton de abajo:',
-    'output'
-  )
+  // ocultamos el boton y el texto de inici
 })
 
+//////// BOTON HACIA ELEGIR RAZA /////////////
+
 botonElegirRaza.addEventListener('click', () => {
-  elegirRaza()
+  razaTime()
   let continuarJuego = document.getElementById('continuarJuego')
   continuarJuego.style.display = 'inline'
   botonElegirRaza.style.display = 'none'
+  formClass.style.display = 'none'
   let outputDiv = document.getElementById('output')
   outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`
   mostrarTablaRaza(personaje.raza)
+<<<<<<< HEAD
 })
 
+=======
+})  
+//////////////////////////
+///////////////////////////////
+/////////////////////////////
+////////////////////////////////////
+      // CONTINUAR JUEGO //
+//// comienza de la historia ////
+  //        MOMENTO 1       //
+/////////////////////////////
+////////////////////////////////////
+///////////////////////////////
+//////////////////////////
+//  HISTORIA #1
+//////////////////////////
+>>>>>>> 201ea47bd06ac47c739f910c37feed54a7f179a6
 let continuarJuego = document.getElementById('continuarJuego')
 continuarJuego.addEventListener('click', ()=> {
+outputDiv = document.getElementById('output2');
+outputDiv.style.display = 'none'
+titulo.innerHTML = 'Despertaste'
+  mostrarMensaje(`¡Hola ${personaje.nombre}!. Menos mal despertaste.Mi nombre es Fulanito y te he estado cuidando. Que bien que despertaste! En serio, necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`, 'output')
 
-  titulo.innerHTML = 'Tutorial'; 
-  let outputDiv = document.getElementById('output2')
-  let outputDiv2 = document.getElementById('ouput')
-  outputDiv2.style.display = 'none';
-
-  outputDiv.innerHTML = 'El juego será una historia, a la cual cada problema será posible resolverlo de 4 maneras distintas, por ejemplo...'
-
-
+  /////////////////////////////////////////////////////////
+  // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable. 
+  // // // // // //
+  ////////////////////////////////////////////////////////
+  // HISTORIA #2 
+  // / / / / / /
+  continuarJuego.addEventListener('click', ()=>{ 
+    titulo.innerHTML = 'Cruzar el rio'
+    mostrarMensaje(`...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`, 'output')
+    let choises = document.getElementById('choises__div')
+    choises.style.display = 'flex';
+    mostrarMensaje('Cruzar el rio solo','ch1') // OP 1
+    mostrarMensaje('Cargar a cuestas y cruzar el rio','ch2') // OP 2
+    mostrarMensaje('No cruzar el rio.','ch3') // OP 3
+    mostrarMensaje('Preguntar que hay al otro lado del rio','ch4') // OP 4
+  })
 })
+
+//// 
+
+
 
 
 

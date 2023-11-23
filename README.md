@@ -1,10 +1,10 @@
 
 <h1># Marie-Joise #</h1>
 <h2>
-    Simulador de juego de rol: (En proceso)
+    Simulador de juego de rol simple: (En proceso)
 </h2>
 
-<p> Tecnologias:
+<p> Tecnologias que usé/utilizo:
     <ul>
       <li>Html</li>
       <li>Css</li>
