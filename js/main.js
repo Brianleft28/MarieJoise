@@ -12,7 +12,43 @@ let personaje = {
 // el nombre, la raza y los atributos al objeto de personaje
 
 function inicializarPersonaje() {
-  personaje.nombre = inputName.value
+  const inputName = document.getElementById('inputName'); 
+  if (inputName.value) {
+      const nombre = inputName.value.trim(); // Elimina espacios en blanco al principio y al final del nombre
+
+      // Verifica la longitud del nombre
+      if (nombre.length >= 3 && nombre.length <= 20) {
+          personaje.nombre = nombre;
+          // ocultamos y mostramos 
+          startGame.style.display = 'none'
+          inputName.style.display = 'none'
+          btnCrearPj.style.display = 'none'
+          ocultar.style.display = 'none'
+          botonElegirRaza.style.display = 'inline'
+          let formClass = document.getElementById('formClass')
+          formClass.style.display = 'flex'
+          // modificamos el titutlo
+          titulo.innerHTML = 'Elije una raza para tu personaje'
+          mostrarMensaje(`Nombre del personaje establecido como: ${personaje.nombre}`, 'output');
+          
+      } else {
+          titulo.innerHTML = 'Elige un nombre'
+          mostrarMensaje('El nombre debe tener entre 3 y 20 caracteres.', 'output');
+          botonElegirRaza.style.display = 'none'
+          btnCrearPj.style.display = 'inline'
+          titulo.style.display = 'inline'
+          ocultar.style.display = 'none'
+          inputName.style.display = 'inline'
+      }
+  } else {
+      titulo.innerHTML = 'Elige un nombre valido'
+      mostrarMensaje('Por favor, ingrese un nombre válido.', 'output');
+      botonElegirRaza.style.display = 'none'
+      btnCrearPj.style.display = 'inline'
+      titulo.style.display = 'inline'
+      ocultar.style.display = 'none'
+      inputName.style.display = 'inline'
+  }
 }
 
 // definimos el array de razas que existen en nuestro mundo
@@ -198,32 +234,24 @@ startGame.addEventListener('click', () => {
 })
 let inputRaza = document.getElementById('classForm')
 let razaSelector = document.getElementById('razaSelector')
-
+ 
 function razaTime() {
   let razaIndex = razaSelector.value
   let razaElegida = razas[razaIndex - 1]
   personaje.raza = razaElegida;
-  if (razaIndex > razas.length || razaIndex < 0) {
-    mostrarMensaje('Por favor ingrese una opción válida.','output')
-  } else if(razaIndex >= 0) {
+  if (razaIndex == 0) {
+    mostrarMensaje('<a target="blank_"href="razas.html">Aca </a>hay informacion sobre las razas disponibles:', 'output')
+    let continuarJuego = getElementById('continuarJuego')
+    let formClass = document.getElementById('formClass')
+  } else if (razaIndex >= 0) {
+
     mostrarMensaje(`Entonces, la raza de $[personaje.nombre] es $[personaje.raza.nombre] \n a continuación la tabla de su raza:` ,'output')
-  }
+}
 }
 //////// BOTON HACIA ELEGIR RAZA /////////////
 btnCrearPj.addEventListener('click', () => {
   inicializarPersonaje()
-  // ocultamos el boton y el texto de inicio
-  startGame.style.display = 'none'
-  inputName.style.display = 'none'
-  btnCrearPj.style.display = 'none'
-  ocultar.style.display = 'none'
-  botonElegirRaza.style.display = 'inline'
-  let formClass = document.getElementById('formClass')
-  formClass.style.display = 'flex'
-  // modificamos el titutlo
-
-  titulo.innerHTML = 'Elije una raza para tu personaje'
-
+  // ocultamos el boton y el texto de inici
 })
 
 //////// BOTON HACIA ELEGIR RAZA /////////////
@@ -238,10 +266,18 @@ botonElegirRaza.addEventListener('click', () => {
   outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`
   mostrarTablaRaza(personaje.raza)
 })  
-
+//////////////////////////
+///////////////////////////////
+/////////////////////////////
+////////////////////////////////////
       // CONTINUAR JUEGO //
 //// comienza de la historia ////
   //        MOMENTO 1       //
+/////////////////////////////
+////////////////////////////////////
+///////////////////////////////
+//////////////////////////
+
 let continuarJuego = document.getElementById('continuarJuego')
 continuarJuego.addEventListener('click', ()=> {
 outputDiv = document.getElementById('output2');
@@ -249,15 +285,18 @@ outputDiv.style.display = 'none'
 titulo.innerHTML = 'Despertaste'
   mostrarMensaje(`¡Hola ${personaje.nombre}!. Menos mal despertaste.Mi nombre es Fulanito y te he estado cuidando. Que bien que despertaste! En serio, necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`, 'output')
 
+  /////////////////////////////////////////////////////////
   // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable. 
   continuarJuego.addEventListener('click', ()=>{ 
+    titulo.innerHTML = 'Cruzar el rio'
     mostrarMensaje(`...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`, 'output')
     let choises = document.getElementById('choises__div')
     choises.style.display = 'flex';
-    mostrarMensaje('Opción 1','ch1') // OP 1
-    mostrarMensaje('Opción 2','ch2') // OP 2
-    mostrarMensaje('Opción 3','ch3') // OP 3
-    mostrarMensaje('Opción 4','ch4') // OP 4
+    mostrarMensaje('Cruzar el rio solo','ch1') // OP 1
+    mostrarMensaje('Cargar a cuestas y cruzar el rio','ch2') // OP 2
+    mostrarMensaje('No cruzar el rio.','ch3') // OP 3
+    mostrarMensaje('Preguntar que hay al otro lado del rio','ch4') // OP 4
+  
   })
 })
 
