@@ -277,7 +277,8 @@ botonElegirRaza.addEventListener('click', () => {
 ////////////////////////////////////
 ///////////////////////////////
 //////////////////////////
-
+//  HISTORIA #1
+//////////////////////////
 let continuarJuego = document.getElementById('continuarJuego')
 continuarJuego.addEventListener('click', ()=> {
 outputDiv = document.getElementById('output2');
@@ -287,6 +288,10 @@ titulo.innerHTML = 'Despertaste'
 
   /////////////////////////////////////////////////////////
   // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable. 
+  // // // // // //
+  ////////////////////////////////////////////////////////
+  // HISTORIA #2
+  //////////////
   continuarJuego.addEventListener('click', ()=>{ 
     titulo.innerHTML = 'Cruzar el rio'
     mostrarMensaje(`...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`, 'output')
@@ -296,9 +301,10 @@ titulo.innerHTML = 'Despertaste'
     mostrarMensaje('Cargar a cuestas y cruzar el rio','ch2') // OP 2
     mostrarMensaje('No cruzar el rio.','ch3') // OP 3
     mostrarMensaje('Preguntar que hay al otro lado del rio','ch4') // OP 4
-  
   })
 })
+
+//// 
 
 
 
