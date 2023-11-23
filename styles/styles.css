@@ -8,7 +8,28 @@ body {
     flex-direction: column; 
     min-height: 100vh;
 }
+nav, div {
+    margin: 0;
+    padding: 0;
+}
 
+.main__contenedor {
+    width: 400px;
+    height: 500px;
+    
+    background-color: darkblue;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    
+}
+#start {
+    margin: 0 auto;
+}
 main {
     display: flex;
     flex-direction: column;
@@ -53,10 +74,7 @@ h1 {
     font-weight: 550;
 }
 
-.main__contenedor {
-    margin: auto;
-    width: 85%;
-}
+
 .start_game {
     width: 200px;
     height: 70px;

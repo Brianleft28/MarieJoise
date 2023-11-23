@@ -5,7 +5,6 @@
 
 let personaje = {
   nombre: '',
-  sexo: '',
   raza: {},
 }
 
@@ -122,10 +121,9 @@ function elegirRaza() {
     personaje.raza = razas[razaIndex - 1]
 
     console.log(
+      
       'La raza de ' + personaje.nombre + ' es: ' + personaje.raza.nombre
     )
-    console.log('Información de personaje:')
-
     console.table(personaje)
     console.log('Información de raza:')
     console.table(personaje.raza)
@@ -219,6 +217,7 @@ function mostrarMensaje(mensaje, elementoId) {
   outputDiv.innerHTML += `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`
 }
 
+
 btnCrearPj.addEventListener('click', () => {
   inicializarPersonaje()
   // ocultamos el boton y el texto de inicio
@@ -248,6 +247,7 @@ botonElegirRaza.addEventListener('click', () => {
   outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`
   mostrarTablaRaza(personaje.raza)
 })
+
 let continuarJuego = document.getElementById('continuarJuego')
 continuarJuego.addEventListener('click', ()=> {
 
