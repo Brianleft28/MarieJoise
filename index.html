@@ -65,7 +65,19 @@
     <button type="button" id="crearPersonaje" class="btn btn-primary mt-2">Crear personaje</button>
     <button type="button" id="elegirRaza"class="btn btn-primary mt-3">Elegir raza del personaje</button>
     <button type="button" id="continuarJuego" class="btn btn-primary mt-2" style="display: none;">Continuar Juego</button>
-        <!-- INPUT DE RAZA -->
+   <!-- 4 BOTONES DE HISTORIA -->
+   <div style='display: none;'id="choises__div" class=" mt-2 form-floating">
+    <select id="choises" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+      <option selected>Decide que vas a hacer</option>
+      <option id="ch1" value="1"></option>
+      <option id="ch2" value="2"></option>
+      <option id="ch3" value="3"></option>
+      <option id="ch4" value="4"></option>
+   
+    </select>
+    <label for="floatingSelect">Menu desplegable</label>
+  </div>
+    <!-- INPUT DE RAZA -->
 
     <!-- PARA DESPUES -->
 
@@ -82,7 +94,7 @@
         <option value="7">Celestial</option>
       </select>
     </form>
-    </main>
+  </main>
 
     <!-- Footer -->
     <footer class="bg-dark text-light text-center py-3 d-flex justify-content-center footer-mobile-margin">
