@@ -5,7 +5,6 @@
 
 let personaje = {
   nombre: '',
-  sexo: '',
   raza: {},
 }
 
@@ -112,31 +111,6 @@ const razas = [
 // ya que encontré una manera para optimizar la eleccion de raza y no quiero perder el
 // primer intento intuitivo
 
-function elegirRaza() {
-  let razaIndex = prompt(
-    'Elegí una raza para tu personaje...\n1-Humano\n2-Ogro\n3-Elfo\n4-Alto Elfo\n5-Elfo oscuro\n6-Demonio\n7-Celestial\n\n0 para más información sobre las razas'
-  )
-  // si razaIndex es mayor que 1 y menos que el numero de objetos que tenemos en el array
-  if (razaIndex >= 1 && razaIndex <= razas.length) {
-    // personaje.raza = "" ahora es igual a razaIndex - 1, porque el array comienza en 0
-    personaje.raza = razas[razaIndex - 1]
-
-    console.log(
-      'La raza de ' + personaje.nombre + ' es: ' + personaje.raza.nombre
-    )
-    console.log('Información de personaje:')
-
-    console.table(personaje)
-    console.log('Información de raza:')
-    console.table(personaje.raza)
-    // Si el usuario ingresa 0, se muestra información sobre todas las razas
-  } else if (razaIndex == 0) {
-    console.log('Acá tenes información sobre la estadistica de cada raza:')
-    console.table(razas)
-  } else {
-    alert('Ingresa una opción válida')
-  }
-}
 // funcion para mostrar una raza en una tabla html
 
 /// Comienzo del juego incoportando eventos y manipulando el DOM ///
@@ -202,7 +176,18 @@ function mostrarTablaRaza(raza) {
 
   document.getElementById('output2').insertAdjacentHTML('beforeend', tablaHTML)
 }
+
+// FUNCION PARA MOSTRAR MENSAJE, EL SEGUNDO PARAMETRO ES EL ID
+
+function mostrarMensaje(mensaje, elementoId) {
+  const outputDiv = document.getElementById(elementoId)
+  outputDiv.innerHTML = `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`
+}
+
+///////////////////////////
 ////// START SECTION //////
+///////////////////////////
+
 startGame.addEventListener('click', () => {
   // volvemos a mostrar lo necesario para el inicio y el ocultamos el boton de start
   startGame.style.display = 'none'
@@ -211,14 +196,20 @@ startGame.addEventListener('click', () => {
   btnCrearPj.style.display = 'inline'
   ocultar.style.display = 'inline'
 })
+let inputRaza = document.getElementById('classForm')
+let razaSelector = document.getElementById('razaSelector')
 
-// FUNCION PARA MOSTRAR MENSAJE, EL SEGUNDO PARAMETRO ES EL ID
-
-function mostrarMensaje(mensaje, elementoId) {
-  const outputDiv = document.getElementById(elementoId)
-  outputDiv.innerHTML += `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`
+function razaTime() {
+  let razaIndex = razaSelector.value
+  let razaElegida = razas[razaIndex - 1]
+  personaje.raza = razaElegida;
+  if (razaIndex > razas.length || razaIndex < 0) {
+    mostrarMensaje('Por favor ingrese una opción válida.','output')
+  } else if(razaIndex >= 0) {
+    mostrarMensaje(`Entonces, la raza de $[personaje.nombre] es $[personaje.raza.nombre] \n a continuación la tabla de su raza:` ,'output')
+  }
 }
-
+//////// BOTON HACIA ELEGIR RAZA /////////////
 btnCrearPj.addEventListener('click', () => {
   inicializarPersonaje()
   // ocultamos el boton y el texto de inicio
@@ -227,38 +218,32 @@ btnCrearPj.addEventListener('click', () => {
   btnCrearPj.style.display = 'none'
   ocultar.style.display = 'none'
   botonElegirRaza.style.display = 'inline'
+  let formClass = document.getElementById('formClass')
+  formClass.style.display = 'flex'
   // modificamos el titutlo
 
   titulo.innerHTML = 'Elije una raza para tu personaje'
 
-  mostrarMensaje(
-    'Hola ' +
-      personaje.nombre +
-      ', bienvenido a MarieJoise. Selecciona tu raza tocando el boton de abajo:',
-    'output'
-  )
 })
 
+//////// BOTON HACIA ELEGIR RAZA /////////////
+
 botonElegirRaza.addEventListener('click', () => {
-  elegirRaza()
+  razaTime()
   let continuarJuego = document.getElementById('continuarJuego')
   continuarJuego.style.display = 'inline'
   botonElegirRaza.style.display = 'none'
+  formClass.style.display = 'none'
   let outputDiv = document.getElementById('output')
   outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`
   mostrarTablaRaza(personaje.raza)
-})
+})  
+
+
+
 let continuarJuego = document.getElementById('continuarJuego')
 continuarJuego.addEventListener('click', ()=> {
-
-  titulo.innerHTML = 'Tutorial'; 
-  let outputDiv = document.getElementById('output2')
-  let outputDiv2 = document.getElementById('ouput')
-  outputDiv2.style.display = 'none';
-
-  outputDiv.innerHTML = 'El juego será una historia, a la cual cada problema será posible resolverlo de 4 maneras distintas, por ejemplo...'
-
-
+mostrarMensaje(-'Hola','output')
 })
 
 
