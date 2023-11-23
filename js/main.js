@@ -290,8 +290,11 @@ titulo.innerHTML = 'Despertaste'
   // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable. 
   // // // // // //
   ////////////////////////////////////////////////////////
-  // HISTORIA #2
+  // HISTORIA #2 asdadasdas
   //////////////
+  function asd (){
+    
+  }
   continuarJuego.addEventListener('click', ()=>{ 
     titulo.innerHTML = 'Cruzar el rio'
     mostrarMensaje(`...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`, 'output')
