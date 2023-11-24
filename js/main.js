@@ -147,34 +147,6 @@ const razas = [
 // ya que encontré una manera para optimizar la eleccion de raza y no quiero perder el
 // primer intento intuitivo
 
-<<<<<<< HEAD
-function elegirRaza() {
-  let razaIndex = prompt(
-    'Elegí una raza para tu personaje...\n1-Humano\n2-Ogro\n3-Elfo\n4-Alto Elfo\n5-Elfo oscuro\n6-Demonio\n7-Celestial\n\n0 para más información sobre las razas'
-  )
-  // si razaIndex es mayor que 1 y menos que el numero de objetos que tenemos en el array
-  if (razaIndex >= 1 && razaIndex <= razas.length) {
-    // personaje.raza = "" ahora es igual a razaIndex - 1, porque el array comienza en 0
-    personaje.raza = razas[razaIndex - 1]
-
-    console.log(
-      
-      'La raza de ' + personaje.nombre + ' es: ' + personaje.raza.nombre
-    )
-    console.table(personaje)
-    console.log('Información de raza:')
-    console.table(personaje.raza)
-    // Si el usuario ingresa 0, se muestra información sobre todas las razas
-  } else if (razaIndex == 0) {
-    console.log('Acá tenes información sobre la estadistica de cada raza:')
-    console.table(razas)
-  } else {
-    alert('Ingresa una opción válida')
-  }
-}
-=======
->>>>>>> 201ea47bd06ac47c739f910c37feed54a7f179a6
-// funcion para mostrar una raza en una tabla html
 
 /// Comienzo del juego incoportando eventos y manipulando el DOM ///
 
@@ -182,7 +154,6 @@ function elegirRaza() {
 
 let btnCrearPj = document.getElementById('crearPersonaje')
 let botonElegirRaza = document.getElementById('elegirRaza')
-let ocultar = document.getElementById('infoStart')
 let titulo = document.getElementsByTagName('h1')[0]
 let inputName = document.getElementById('inputName')
 let startGame = document.getElementById('start')
@@ -192,7 +163,6 @@ let startGame = document.getElementById('start')
 botonElegirRaza.style.display = 'none'
 btnCrearPj.style.display = 'none'
 titulo.style.display = 'none'
-ocultar.style.display = 'none'
 inputName.style.display = 'none'
 
 function mostrarTablaRaza(raza) {
@@ -274,13 +244,8 @@ function razaTime() {
 
     mostrarMensaje(`Entonces, la raza de $[personaje.nombre] es $[personaje.raza.nombre] \n a continuación la tabla de su raza:` ,'output')
 }
-<<<<<<< HEAD
 
 
-=======
-}
-//////// BOTON HACIA ELEGIR RAZA /////////////
->>>>>>> 201ea47bd06ac47c739f910c37feed54a7f179a6
 btnCrearPj.addEventListener('click', () => {
   inicializarPersonaje()
   // ocultamos el boton y el texto de inici
@@ -297,25 +262,8 @@ botonElegirRaza.addEventListener('click', () => {
   let outputDiv = document.getElementById('output')
   outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`
   mostrarTablaRaza(personaje.raza)
-<<<<<<< HEAD
 })
 
-=======
-})  
-//////////////////////////
-///////////////////////////////
-/////////////////////////////
-////////////////////////////////////
-      // CONTINUAR JUEGO //
-//// comienza de la historia ////
-  //        MOMENTO 1       //
-/////////////////////////////
-////////////////////////////////////
-///////////////////////////////
-//////////////////////////
-//  HISTORIA #1
-//////////////////////////
->>>>>>> 201ea47bd06ac47c739f910c37feed54a7f179a6
 let continuarJuego = document.getElementById('continuarJuego')
 continuarJuego.addEventListener('click', ()=> {
 outputDiv = document.getElementById('output2');
@@ -340,7 +288,7 @@ titulo.innerHTML = 'Despertaste'
     mostrarMensaje('Preguntar que hay al otro lado del rio','ch4') // OP 4
   })
 })
-
+}
 //// 
 
 
