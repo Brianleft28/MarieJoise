@@ -1,3 +1,5 @@
+export
+
 function inicializarPersonaje() {
   const inputName = document.getElementById("inputName");
   if (inputName.value) {

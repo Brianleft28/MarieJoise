@@ -1,3 +1,5 @@
+export
+
 const razas = [
   {
     nombre: "Humano",

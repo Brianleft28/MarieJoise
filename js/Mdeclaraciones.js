@@ -1,3 +1,5 @@
+// EXPORTANDO CON EL TYPE MODULE EN EL SCRIPT DEL INDEX //
+
 let btnCrearPj = document.getElementById("crearPersonaje");
 let botonElegirRaza = document.getElementById("elegirRaza");
 let titulo = document.getElementsByTagName("h1")[0];

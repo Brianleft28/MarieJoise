@@ -1,3 +1,7 @@
+import _ from './declaraciones';
+import _ from './Mddbb';
+import _ from './funciones'
+
 let personaje = {
   nombre: "",
   raza: {},
