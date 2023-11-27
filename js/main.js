@@ -54,99 +54,13 @@ function inicializarPersonaje() {
 // definimos el array de razas que existen en nuestro mundo
 // Se seguira manteniendo este array con objetos y propiedades de raza
 
-const razas = [
-  {
-    nombre: 'Humano',
-    origen: 'MarieJoise',
-    habEspecial: 'Tecnología',
-
-    // Atributos de Raza//
-
-    Str: 5, //Fuerza
-    Int: 8, //Inteligencia
-    Skill: 5, // Destreza
-    Agi: 5, // Agilidad
-    Stealth: 5, // Sigilo
-  },
-  {
-    nombre: 'Ogro',
-    origen: 'Montañas',
-    habEspecial: 'Fuerza Bruta',
-
-    // Atributos de Raza //
-    Str: 8,
-    Int: 3,
-    Skill: 4,
-    Agi: 2,
-    Stealth: 2,
-  },
-  {
-    nombre: 'Elfo',
-    origen: 'Bosques',
-    habEspecial: 'Arquería',
-
-    // Atributos de Raza//
-    Str: 2, //Fuerza
-    Int: 5, //Inteligencia
-    Skill: 8, // Destreza
-    Agi: 7, // Agilidad
-    Stealth: 6, // Sigilo
-  },
-  {
-    nombre: 'Alto Elfo',
-    origen: 'Bosques',
-    habEspecial: 'Magia',
-
-    // Atributos de raza //
-    Str: 2, //Fuerza
-    Int: 8, //Inteligencia
-    Skill: 6, //Destreza
-    Agi: 6, //Agilidad
-    Stealth: 5, //Sigilo
-  },
-  {
-    nombre: 'Elfo Oscuro',
-    origen: 'Bosques',
-    habEspecial: 'Fuerza Bruta',
-
-    // Atributos de raza //
-    Str: 8, //Fuerza
-    Int: 5, //Inteligencia
-    Skill: 5, //Destreza
-    Agi: 5, //Agilidad
-    Stealth: 5, //Sigilo
-  },
-  {
-    nombre: 'Demonio',
-    origen: 'Inferno',
-    habEspecial: 'Energia oscura',
-
-    // Atributos de raza //
-    Str: 6, //Fuerza
-    Int: 6, //Inteligencia
-    Skill: 5, //Destreza
-    Agi: 5, //Agilidad
-    Stealth: 5, //Sigilo
-  },
-  {
-    nombre: 'Celestial',
-    origen: 'Olimpo',
-    habEspecial: 'Revivir',
-
-    // Atributos de raza //
-    Str: 4, //Fuerza
-    Int: 8, //Inteligencia
-    Skill: 6, //Destreza
-    Agi: 5, //Agilidad
-    Stealth: 5, //Sigilo
-  },
-]
 /// Elegiremos una raza para nuestro personaje ///
 
 // todo el codigo que use anteriormente, lo voy a dejar en un JS llamado elegirRazaViejo
 // ya que encontré una manera para optimizar la eleccion de raza y no quiero perder el
 // primer intento intuitivo
 
+// funcion para mostrar una raza en una tabla html
 
 /// Comienzo del juego incoportando eventos y manipulando el DOM ///
 
@@ -154,6 +68,7 @@ const razas = [
 
 let btnCrearPj = document.getElementById('crearPersonaje')
 let botonElegirRaza = document.getElementById('elegirRaza')
+let ocultar = document.getElementById('infoStart')
 let titulo = document.getElementsByTagName('h1')[0]
 let inputName = document.getElementById('inputName')
 let startGame = document.getElementById('start')
@@ -163,59 +78,13 @@ let startGame = document.getElementById('start')
 botonElegirRaza.style.display = 'none'
 btnCrearPj.style.display = 'none'
 titulo.style.display = 'none'
+ocultar.style.display = 'none'
 inputName.style.display = 'none'
 
-function mostrarTablaRaza(raza) {
-  const tablaHTML = `
-    <table class="text-center border="1">
-      <tr style: margin 10px>
-        <th>Atributo</th>
-        <th>Valor</th>
-      </tr>
-      <tr>
-        <td>Nombre: </td>
-        <td>${raza.nombre}</td>
-      </tr>
-      <tr>
-        <td>Origen</td>
-        <td>${raza.origen}</td>
-      </tr>
-      <tr>
-        <td>Habilidad Especial</td>
-        <td>${raza.habEspecial}</td>
-      </tr>
-      <tr>
-        <td>Fuerza</td>
-        <td>${raza.Str}</td>
-      </tr>
-      <tr>
-        <td>Inteligencia</td>
-        <td>${raza.Int}</td>
-      </tr>
-      <tr>
-        <td>Destreza</td>
-        <td>${raza.Skill}</td>
-      </tr>
-      <tr>
-        <td>Agilidad</td>
-        <td>${raza.Agi}</td>
-      </tr>
-      <tr>
-        <td>Sigilo</td>
-        <td>${raza.Stealth}</td>
-      </tr>
-    </table>
-  `
 
-  document.getElementById('output2').insertAdjacentHTML('beforeend', tablaHTML)
-}
 
 // FUNCION PARA MOSTRAR MENSAJE, EL SEGUNDO PARAMETRO ES EL ID
 
-function mostrarMensaje(mensaje, elementoId) {
-  const outputDiv = document.getElementById(elementoId)
-  outputDiv.innerHTML = `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`
-}
 
 ///////////////////////////
 ////// START SECTION //////
@@ -248,7 +117,7 @@ function razaTime() {
 
 btnCrearPj.addEventListener('click', () => {
   inicializarPersonaje()
-  // ocultamos el boton y el texto de inici
+
 })
 
 //////// BOTON HACIA ELEGIR RAZA /////////////
@@ -289,19 +158,3 @@ titulo.innerHTML = 'Despertaste'
   })
 })
 }
-//// 
-
-
-
-
-
-////// continuar juego
-
-
-
-/// continuar con el comienzo de la historia, diviendo 
-// la resolución del problema en 4 caminos posibles, con 4 
-// distintas historias
-
-// tambien tengo pensado agregar un inventario para mi personaje
-
