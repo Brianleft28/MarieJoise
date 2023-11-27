@@ -1,6 +1,4 @@
-export
-
-const razas = [
+export const razas = [
   {
     nombre: "Humano",
     origen: "MarieJoise",
@@ -87,3 +85,5 @@ const razas = [
     Stealth: 5 //Sigilo
   }
 ];
+
+
