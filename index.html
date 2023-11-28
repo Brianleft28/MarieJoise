@@ -38,7 +38,7 @@
   </head>
   <body>
     <!-- FUTURE NAV -->
-      <nav class="navbar-expand-md bg-dark d-flex">
+    <nav class="navbar-expand-md bg-dark d-flex">
         <a href="#" class="navbar-brand fs-3 ms-5">MarieJoise<img class="logo--img" src="./asset/favicon2.png" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
           <i class="fa-solid fa-bars"></i>
@@ -53,22 +53,24 @@
       </nav>
 
 
-    <!-- MAIN SECTION -->
-    <div id="container">
-    <h1 class="text-center shadow-lg">¡Bienvenido a MarieJoise!</h1>
-      <!-- Todo tu contenido actual -->
+    <!-- MAIN SECTION -->  
+<div id="containerM">
+  <div class="containerN">
+        <h1 class="text-center">¡Bienvenido a MarieJoise!</h1>
     <!-- Input nombre -->
     <input id="inputName" type="text" class="input-group-text" placeholder="Ingrese un nombre">
+  </div>
     <!-- DIV DE INFORMACIÓN Y DEMÁS -->
-    <div id="output" class="text-center bg-dark text-white mt-2"></div>
-    <div id="output2" class="text-center bg-dark text-white mt-3 px-2"></div>
-
+    <span id="output" class="text-center bg-dark text-white mt-2" style="display: none;"></span>
+    <span id="output2" class="text-center bg-dark text-white mt-3 px-2" style="display: none;"></span>
     <!-- BOTONES E INPUTS -->
+    <div class="botones text-center">
     <button type="button" id="start" class="btn btn-primary start_game">Iniciar Juego</button>
     <button type="button" id="crearPersonaje" class="btn btn-primary mt-2">Crear personaje</button>
     <button type="button" id="elegirRaza" class="btn btn-primary mt-3">Elegir raza del personaje</button>
     <button type="button" id="continuarJuego" class="btn btn-primary mt-2" style="display: none;">Continuar
       Juego</button>
+    </div>
     <!-- 4 BOTONES DE HISTORIA -->
     <div style='display: none;' id="choises__div" class=" mt-2 form-floating">
       <select id="choises" class="form-select" id="floatingSelect" aria-label="Floating label select example">
@@ -96,7 +98,7 @@
     </main>
   </div>
     <!-- Footer -->
-    <footer class="bg-dark text-light text-center py-3 d-flex justify-content-center footer-mobile-margin">
+    <footer class="bg-dark text-light text-center footer py-3 d-flex justify-content-center">
       <div class="container">
         <div class="row">
           <div class="col-12">

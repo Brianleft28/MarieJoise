@@ -1,131 +1,43 @@
-  #contenedor {
-    height: 100%;
-    margin: 0;
-    display: flex;
-
-
-  }
-body {    
+body {
     margin: 0;
     box-sizing: border-box;
-    justify-content: center;    color: #fff;
-    background-image: url("../asset/bd-black.jpg");
-    display: flex;
-    flex-direction: column; 
-    min-height: 100vh;
-    align-items: center;
-}
-nav, div {
-    margin: 0;
-    padding: 0;
-}
-.main__contenedor {
-    width: 400px;
-    height: 500px;
-    
-    background-color: darkblue;
-    display: flex;
-    width: 40%;
-    height: 40%;
-    flex-direction: column;
     color: #fff;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    
-    
-}
-#start {
-    margin: 0 auto;
-}
-main {
+    background-image: url("../asset/bd-black.jpg");
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    align-items: center; /* Centra los elementos horizontalmente */
   }
   
-.logo--img {
-    max-width: 30px;
-    margin-bottom: 6px;
-    
-}
-/* footer */
-@media (max-width: 767px) {
-    .footer-mobile-margin {
-      margin-top: 100vh; /* Ajusta según sea necesario */
-    }
-    .navbar-expand-md{
-        justify-content: space-around;
-    }
-    .navbar-toggler i::before{
-
-        width: 250px;
-    }
+  html, body {
+    height: 100%; /* Asegura que el cuerpo y el html tengan altura completa */
   }
-  .footer-mobile-margin  {
-    text-align: center;
-    justify-content: center;
-    padding: 0.4em;
-    margin-top: 100%;
-    min-width: 100%;
-}
-
-footer a {
-    font-size: 13px;
-}
-/* main section */
-h1 {
-    font-size: 35px;
-    font-weight: 550;
-}
-
-
-.start_game {
-    width: 200px;
-    height: 70px;
-    font-size: 25px;
-}
-.input-group-text {
-    padding: 10px;
-}
-
-
-/* game */
-
-#elegirRaza {
-    order: 2
-}
-
-#formClass {
-    order: 1
-}
-
-#choises__div {
-    order: 1;
-}
-#continuarJuego {
-    order: 2;
-}
-
-#container {
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 400px;
-    max-width: 600px; /* Ajusta el valor según tus preferencias */
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
-    border: 1px solid #ccc; /* Añade un borde para simular una ventana */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra para resaltar */
-  }
-
-
   
-  #container {
-    max-width: 600px;
+  #containerM {
+    width: 400px;
+    margin-top: auto !important;
+    margin-bottom: auto;
     padding: 20px;
-    border: 1px solid #fff;
-    box-shadow: 0 2 10px rgba(10, 67, 153, 0.822);
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
+  h1 {
+    text-align: center;
+  }
+  nav {
+    padding: 10px;
+  }
+  
+  .logo--img {
+    max-width: 50px;
+    margin-bottom: 6px;
+  }
+  
+  .footer {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    min-width: 100%; ;
+  }
+  
