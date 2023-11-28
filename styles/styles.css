@@ -1,12 +1,19 @@
+  #contenedor {
+    height: 100%;
+    margin: 0;
+    display: flex;
+
+
+  }
 body {    
     margin: 0;
     box-sizing: border-box;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #fff;
+    justify-content: center;    color: #fff;
     background-image: url("../asset/bd-black.jpg");
     display: flex;
     flex-direction: column; 
     min-height: 100vh;
+    align-items: center;
 }
 nav, div {
     margin: 0;
@@ -103,3 +110,22 @@ h1 {
 #continuarJuego {
     order: 2;
 }
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 400px;
+    max-width: 600px; /* Ajusta el valor según tus preferencias */
+    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    border: 1px solid #ccc; /* Añade un borde para simular una ventana */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra para resaltar */
+  }
+
+
+  
+  #container {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #fff;
+    box-shadow: 0 2 10px rgba(10, 67, 153, 0.822);
+  }

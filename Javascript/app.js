@@ -6,7 +6,7 @@ let inputRaza = document.getElementById("classForm");
 let razaSelector = document.getElementById("razaSelector");
 let titulo = document.getElementsByTagName("h1")[0];
 let btnCrearPj = document.getElementById("crearPersonaje");
-let startGame = document.getElementById('start')
+let startGame = document.getElementById("start");
 
 botonElegirRaza.style.display = "none";
 btnCrearPj.style.display = "none";
@@ -146,31 +146,36 @@ function inicializarPersonaje() {
     mostrarMensaje("Por favor, ingrese un nombre válido.", "output");
     botonElegirRaza.style.display = "none";
     btnCrearPj.style.display = "inline";
-    titulo.style.display = "inline";gi
+    titulo.style.display = "inline";
+    gi;
     ocultar.style.display = "none";
     inputName.style.display = "inline";
   }
 }
-
 function mostrarMensaje(mensaje, elementoId) {
   const outputDiv = document.getElementById(elementoId);
-  outputDiv.innerHTML = `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`;
+
+  // Verifica si el elemento existe antes de intentar modificar su contenido
+  if (outputDiv) {
+    outputDiv.innerHTML = `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`;
+  } else {
+    console.error(`Elemento con ID ${elementoId} no encontrado.`);
+  }
 }
 
 // EVENTOS
 btnCrearPj.addEventListener("click", () => {
   btnCrearPj.style.display = "none";
   inputName.style.display = "none";
-  inicializarPersonaje()
+  inicializarPersonaje();
 });
 /// ELEGIR RAZA
-function razaTime(){
-  let razaIndex = razaSelector.value - 1 
-  titulo.innerHTML = 'Sobre las razas'
-  if (razaIndex) {
-    personaje.raza.push(razaIndex)
+function razaTime() {
+  let razaIndex = razaSelector.value - 1;
+  titulo.innerHTML = "Sobre las razas";
+  if (razaIndex >= 0 && razaIndex < razas.length) {
+    personaje.raza = razas[razaIndex];
   }
-  mostrarMensaje(`perfeto ${personaje.nombre} entonces tu raza es ${personaje.raza}. \n Acá tenes informaciión sobre tu raza.`)
 }
 
 botonElegirRaza.addEventListener("click", () => {
@@ -179,13 +184,14 @@ botonElegirRaza.addEventListener("click", () => {
   continuarJuego.style.display = "inline";
   botonElegirRaza.style.display = "none";
   formClass.style.display = "none";
-  let outputDiv = document.getElementById("output");
-  outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje
-    .raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`;
-  mostrarTablaRaza(personaje.raza);
-
+  
+  mostrarMensaje(
+    `perfecto ${personaje.nombre} entonces tu raza es ${personaje.raza.nombre}.`,
+    'output',
+    );
+    mostrarTablaRaza(personaje.raza);
+    mostrarMensaje('Bueno, es hora de levantarse.', 'output2')
 });
-
 
 continuarJuego.addEventListener("click", () => {
   outputDiv = document.getElementById("output2");
@@ -215,7 +221,7 @@ continuarJuego.addEventListener("click", () => {
 
 function mostrarTablaRaza(raza) {
   const tablaHTML = `
-    <table class="text-center border="1">
+    <table class="text-center" border="1">
       <tr style: margin 10px>
         <th>Atributo</th>
         <th>Valor</th>
