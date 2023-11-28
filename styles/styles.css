@@ -3,7 +3,7 @@ body {
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #fff;
-    background-image: url("../src/bd-black.jpg");
+    background-image: url("../asset/bd-black.jpg");
     display: flex;
     flex-direction: column; 
     min-height: 100vh;
@@ -18,12 +18,15 @@ nav, div {
     
     background-color: darkblue;
     display: flex;
+    width: 40%;
+    height: 40%;
     flex-direction: column;
     color: #fff;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
     padding: 15px;
+    
     
 }
 #start {

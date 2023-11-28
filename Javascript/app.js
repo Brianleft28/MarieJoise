@@ -146,7 +146,7 @@ function inicializarPersonaje() {
     mostrarMensaje("Por favor, ingrese un nombre válido.", "output");
     botonElegirRaza.style.display = "none";
     btnCrearPj.style.display = "inline";
-    titulo.style.display = "inline";
+    titulo.style.display = "inline";gi
     ocultar.style.display = "none";
     inputName.style.display = "inline";
   }
