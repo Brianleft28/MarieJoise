@@ -1,5 +1,4 @@
 //EXPORTANDO CON EL TYPE MODULE EN EL SCRIPT DEL INDEX //
-
 let botonElegirRaza = document.getElementById("elegirRaza");
 let continuarJuego = document.getElementById("continuarJuego");
 let inputName = document.getElementById("inputName");
@@ -7,6 +6,7 @@ let inputRaza = document.getElementById("classForm");
 let razaSelector = document.getElementById("razaSelector");
 let titulo = document.getElementsByTagName("h1")[0];
 let btnCrearPj = document.getElementById("crearPersonaje");
+let startGame = document.getElementById('start')
 
 botonElegirRaza.style.display = "none";
 btnCrearPj.style.display = "none";
@@ -163,6 +163,15 @@ btnCrearPj.addEventListener("click", () => {
   inputName.style.display = "none";
   inicializarPersonaje()
 });
+/// ELEGIR RAZA
+function razaTime(){
+  let razaIndex = razaSelector.value - 1 
+  titulo.innerHTML = 'Sobre las razas'
+  if (razaIndex) {
+    personaje.raza.push(razaIndex)
+  }
+  mostrarMensaje(`perfeto ${personaje.nombre} entonces tu raza es ${personaje.raza}. \n Acá tenes informaciión sobre tu raza.`)
+}
 
 botonElegirRaza.addEventListener("click", () => {
   razaTime();
@@ -174,7 +183,9 @@ botonElegirRaza.addEventListener("click", () => {
   outputDiv.innerHTML = `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje
     .raza.nombre}. <br\> Acá abajo tenes información sobre tu raza:`;
   mostrarTablaRaza(personaje.raza);
+
 });
+
 
 continuarJuego.addEventListener("click", () => {
   outputDiv = document.getElementById("output2");
@@ -250,8 +261,6 @@ function mostrarTablaRaza(raza) {
 ///////////////////////////
 ////// START SECTION //////
 ///////////////////////////
-
-let startGame = document.getElementById("start");
 
 startGame.addEventListener("click", () => {
   // volvemos a mostrar lo necesario para el inicio y el ocultamos el boton de start
