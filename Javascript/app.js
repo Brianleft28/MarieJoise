@@ -134,6 +134,7 @@ function inicializarPersonaje() {
         `Nombre del personaje establecido como: ${personaje.nombre}`,
         "output"
       );
+      
     } else {
       titulo.innerHTML = "Elige un nombre";
       mostrarMensaje("El nombre debe tener entre 3 y 20 caracteres.", "output");
@@ -158,8 +159,9 @@ function mostrarMensaje(mensaje, elementoId) {
   const outputDiv = document.getElementById(elementoId);
 
   // Verifica si el elemento existe antes de intentar modificar su contenido
+
   if (outputDiv) {
-    outputDiv.innerHTML = `<p class="text-center bg-dark text-white mt-5">${mensaje}</p>`;
+    outputDiv.innerHTML = `<p class="text-center text-white mt-5">${mensaje}</p>`;
   } else {
     console.error(`Elemento con ID ${elementoId} no encontrado.`);
   }
@@ -193,7 +195,7 @@ botonElegirRaza.addEventListener("click", () => {
     `perfecto ${personaje.nombre} entonces tu raza es ${personaje.raza.nombre}.`,
     'output',
     );
-    mostrarTablaRaza(personaje.raza);
+    mostrarTablaRaza(personaje.raza); 
 });
 
 continuarJuego.addEventListener("click", () => {
@@ -299,9 +301,10 @@ continuarJuego.addEventListener("click", () => {
     );
     let choises = document.getElementById("choises__div");
     choises.style.display = "flex";
-    mostrarMensaje("Opción 1", "ch1"); // OP 1
-    mostrarMensaje("Opción 2", "ch2"); // OP 2
-    mostrarMensaje("Opción 3", "ch3"); // OP 3
-    mostrarMensaje("Opción 4", "ch4"); // OP 4
+    mostrarMensaje("", "ch1"); // OP 1
+    mostrarMensaje("", "ch2"); // OP 2
+    mostrarMensaje("", "ch3"); // OP 3
+    mostrarMensaje("", "ch4"); // OP 4
   });
 });
+
