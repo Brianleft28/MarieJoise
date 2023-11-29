@@ -134,7 +134,7 @@ function inicializarPersonaje() {
         `Nombre del personaje establecido como: ${personaje.nombre}`,
         "output"
       );
-      
+
     } else {
       titulo.innerHTML = "Elige un nombre";
       mostrarMensaje("El nombre debe tener entre 3 y 20 caracteres.", "output");
@@ -192,7 +192,7 @@ botonElegirRaza.addEventListener("click", () => {
 
   
   mostrarMensaje(
-    `perfecto ${personaje.nombre} entonces tu raza es ${personaje.raza.nombre}.`,
+    `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá tenes información sobre tu raza`,
     'output',
     );
     mostrarTablaRaza(personaje.raza); 

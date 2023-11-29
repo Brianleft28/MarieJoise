@@ -46,9 +46,6 @@ body {
   order: 1;
 }
 
-td {
-  margin-right: 5px;
-}
 
   .containerM {
     display: flex;
