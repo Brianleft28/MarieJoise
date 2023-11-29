@@ -1,4 +1,11 @@
-//EXPORTANDO CON EL TYPE MODULE EN EL SCRIPT DEL INDEX //
+document.addEventListener("DOMContentLoaded", () => {
+  // Cargar el nombre del personaje desde localStorage
+  const nombreGuardado = localStorage.getItem("nombrePersonaje");
+  if (nombreGuardado) {
+    inputName.value = nombreGuardado;
+  }
+});
+ 
 let botonElegirRaza = document.getElementById("elegirRaza");
 let continuarJuego = document.getElementById("continuarJuego");
 let inputName = document.getElementById("inputName");
@@ -116,26 +123,24 @@ function inicializarPersonaje() {
   const inputName = document.getElementById("inputName");
   if (inputName.value) {
     const nombre = inputName.value.trim();
-    // Elimina espacios en blanco al principio y al final del nombre
-    // Verifica la longitud del nombre
+
     if (nombre.length >= 3 && nombre.length <= 20) {
+      // Guardar el nombre en localStorage
+      localStorage.setItem("nombrePersonaje", nombre);
+
       personaje.nombre = nombre;
-      // ocultamos y mostramos
       startGame.style.display = "none";
       inputName.style.display = "none";
       btnCrearPj.style.display = "none";
       botonElegirRaza.style.display = "inline";
       let formClass = document.getElementById("formClass");
       formClass.style.display = "flex";
-      // modificamos el titutlo
       titulo.innerHTML = "Elije una raza para tu personaje";
-      // verifico si output existe al momento de imprimir el mensaje
       
       mostrarMensaje(
         `Nombre del personaje establecido como: ${personaje.nombre}`,
         "output"
       );
-
     } else {
       titulo.innerHTML = "Elige un nombre";
       mostrarMensaje("El nombre debe tener entre 3 y 20 caracteres.", "output");
@@ -178,7 +183,7 @@ btnCrearPj.addEventListener("click", () => {
 function razaTime() {
   let razaIndex = razaSelector.value - 1;
   titulo.innerHTML = `${personaje.nombre},`;
-  titulo.innerHTML = `selecciona tu raza`;
+  titulo.innerHTML = `Selecciona tu raza`;
   if (razaIndex >= 0 && razaIndex < razas.length) {
     personaje.raza = razas[razaIndex];
   } else if (razaIndex == 0){
@@ -198,6 +203,7 @@ botonElegirRaza.addEventListener("click", () => {
     'output',
     );
     mostrarTablaRaza(personaje.raza);
+    localStorage.setItem("razaPersonaje", JSON.stringify(personaje.raza));
 });
 
 continuarJuego.addEventListener("click", () => {
@@ -292,6 +298,7 @@ continuarJuego.addEventListener("click", () => {
     `¡Hola ${personaje.nombre}!. Menos mal despertaste.Mi nombre es Fulanito y te he estado cuidando. Que bien que despertaste! En serio, necesitamos cruzar ese rio y nada mejor que un ${personaje
       .raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`,
     "output"
+    
   );
 
   // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable.
@@ -307,6 +314,6 @@ continuarJuego.addEventListener("click", () => {
     mostrarMensaje("Cargar a cuestas al anciano y cruzar", "ch2"); // OP 2
     mostrarMensaje("Quizás sea una mejor idea no intentarlo...", "ch3"); // OP 3
     mostrarMensaje("Matar al anciano", "ch4"); // OP 4
-  });
+  }); 
 });
 
