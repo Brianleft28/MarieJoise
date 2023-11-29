@@ -128,6 +128,8 @@ function inicializarPersonaje() {
       formClass.style.display = "flex";
       // modificamos el titutlo
       titulo.innerHTML = "Elije una raza para tu personaje";
+      // verifico si output existe al momento de imprimir el mensaje
+      
       mostrarMensaje(
         `Nombre del personaje establecido como: ${personaje.nombre}`,
         "output"
@@ -172,7 +174,8 @@ btnCrearPj.addEventListener("click", () => {
 /// ELEGIR RAZA
 function razaTime() {
   let razaIndex = razaSelector.value - 1;
-  titulo.innerHTML = "Sobre las razas";
+  titulo.innerHTML = `${personaje.nombre},`;
+  titulo.innerHTML = `selecciona tu raza`;
   if (razaIndex >= 0 && razaIndex < razas.length) {
     personaje.raza = razas[razaIndex];
   }
@@ -184,13 +187,13 @@ botonElegirRaza.addEventListener("click", () => {
   continuarJuego.style.display = "inline";
   botonElegirRaza.style.display = "none";
   formClass.style.display = "none";
+
   
   mostrarMensaje(
     `perfecto ${personaje.nombre} entonces tu raza es ${personaje.raza.nombre}.`,
     'output',
     );
     mostrarTablaRaza(personaje.raza);
-    mostrarMensaje('Bueno, es hora de levantarse.', 'output2')
 });
 
 continuarJuego.addEventListener("click", () => {
