@@ -71,6 +71,7 @@ const razas = [
     Agi: 6, //Agilidad
     Stealth: 5 //Sigilo
   },
+
   {
     nombre: "Elfo Oscuro",
     origen: "Bosques",
@@ -180,6 +181,8 @@ function razaTime() {
   titulo.innerHTML = `selecciona tu raza`;
   if (razaIndex >= 0 && razaIndex < razas.length) {
     personaje.raza = razas[razaIndex];
+  } else if (razaIndex == 0){
+        mostrarMensaje('Información sobre las razas: (en proceso)','output')
   }
 }
 
@@ -190,12 +193,11 @@ botonElegirRaza.addEventListener("click", () => {
   botonElegirRaza.style.display = "none";
   formClass.style.display = "none";
 
-  
   mostrarMensaje(
     `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá tenes información sobre tu raza`,
     'output',
     );
-    mostrarTablaRaza(personaje.raza); 
+    mostrarTablaRaza(personaje.raza);
 });
 
 continuarJuego.addEventListener("click", () => {
@@ -301,10 +303,10 @@ continuarJuego.addEventListener("click", () => {
     );
     let choises = document.getElementById("choises__div");
     choises.style.display = "flex";
-    mostrarMensaje("", "ch1"); // OP 1
-    mostrarMensaje("", "ch2"); // OP 2
-    mostrarMensaje("", "ch3"); // OP 3
-    mostrarMensaje("", "ch4"); // OP 4
+    mostrarMensaje("Cruzar nadando y dejar al anciano", "ch1"); // OP 1
+    mostrarMensaje("Cargar a cuestas al anciano y cruzar", "ch2"); // OP 2
+    mostrarMensaje("Quizás sea una mejor idea no intentarlo...", "ch3"); // OP 3
+    mostrarMensaje("Matar al anciano", "ch4"); // OP 4
   });
 });
 

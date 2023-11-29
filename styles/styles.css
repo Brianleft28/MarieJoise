@@ -25,7 +25,12 @@ body {
   margin-top: 10px;
  }
   #containerM {
-    min-width: 50%;
+    min-width: 30% !important;
+    max-width: 75%;
+    min-height: 50%;
+    max-height: 95%;
+
+    text-align: center;
     margin: 5%;
     margin-top: auto ;
     margin-bottom: auto;
@@ -46,12 +51,11 @@ body {
   order: 1;
 }
 
-
   .containerM {
     display: flex;
     justify-content: center;
     align-items: center;  
-    width: 0;
+
   }
   h1 {
     font-size: 30px;
