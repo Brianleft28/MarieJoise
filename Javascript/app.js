@@ -1,5 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Cargar el nombre del personaje desde localStorage
+// Cargar el nombre del personaje desde localStorage
   const nombreGuardado = localStorage.getItem("nombrePersonaje");
   if (nombreGuardado) {
     inputName.value = nombreGuardado;
