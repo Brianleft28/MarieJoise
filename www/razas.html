@@ -27,7 +27,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- LINK ESTILOS -->
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
     <!-- HL JS -->
     <link
       rel="stylesheet"
@@ -37,63 +37,36 @@
   <body>
     <!-- FUTURE NAV -->
       <nav class="navbar-expand-md bg-dark d-flex">
-        <a href="#" class="navbar-brand fs-3 ms-5">MarieJoise<img class="logo--img" src="./src/favicon2.png" alt="logo"></a>
+        <a href="#" class="navbar-brand fs-3 ms-5">MarieJoise<img class="logo--img" src="../asset/favicon2.png" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="btn">
           <ul class="navbar-nav ms-auto me-3">
-            <li class="nav-item"><a href="index.html" class="nav-link mx-2">Jugar</a></li>
+            <li class="nav-item"><a href="../index.html" class="nav-link mx-2">Jugar</a></li>
             <li class="nav-item"><a href="#" class="nav-link mx-2">Razas</a></li>
             <li class="nav-item"><a href="#" class="nav-link ms-2 me-1">Historia</a></li> 
           </ul>
         </div>
       </nav>
     <!-- MAIN SECTION -->
-    <main class="main__contenedor">
-      <h1>¡Bienvenido a MarieJoise!</h1>
-      <p class="text-center" id="infoStart">Ingrese el nombre de su personaje y toque 'Crear Personaje'</p>
-    <!-- Input nombre -->
-      <input id="inputName" type="text" class="input-group-text" placeholder="Ingrese un nombre">
-    <!-- DIV DE INFORMACIÓN Y DEMÁS -->
-    <div id="output" class="text-center bg-dark text-white mt-2"></div> 
-    <div id="output2" class="text-center bg-dark text-white mt-3 px-2"></div> 
+<main>
 
-    <!-- BOTONES E INPUTS -->
-    <button type="button" id="start" class="btn btn-primary start_game">Iniciar Juego</button>
-    <button type="button" id="crearPersonaje" class="btn btn-primary mt-2">Crear personaje</button>
-    <button type="button" id="elegirRaza"class="btn btn-primary mt-3">Elegir raza del personaje</button>
-    <button type="button" id="continuarJuego" class="btn btn-primary mt-2" style="display: none;">Continuar Juego</button>
-   <!-- 4 BOTONES DE HISTORIA -->
-   <div style='display: none;'id="choises__div" class=" mt-2 form-floating">
-    <select id="choises" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-      <option selected id="ch1" value="1"></option>
-      <option id="ch2" value="2"></option>
-      <option id="ch3" value="3"></option>
-      <option id="ch4" value="4"></option>
-   
-    </select>
-    <label for="floatingSelect">Menu desplegable</label>
-  </div>
-    <!-- INPUT DE RAZA -->
+<div class="container__div">
+  <h1 class="h1__titulo">
+    <ul>
+      <li class="1">Razas</li>
+      <li class="2">Razas</li>
+      <li class="3">Razas</li>
+      <li class="4">Razas</li>
+      <li class="5">Razas</li>
+      <li class="6">Razas</li>
+      <li class="7">Razas</li>
+    </ul>
+  </h1>
+</div>
 
-    <!-- PARA DESPUES -->
-
-    <form id="formClass"class="form-select-sm" style="display: none ;">
-      <label class="form-select-lg">Seleccione la raza de su personaje: </label>
-      <select id="razaSelector">
-        <option value="0">Mas información de las razas</option>
-        <option value="1">Humano</option>
-        <option value="2">Ogro</option>
-        <option value="3">Elfo</option>
-        <option value="4">Alto Elfo</option>
-        <option value="5">Elfo Oscuro</option>
-        <option value="6">Demonio</option>
-        <option value="7">Celestial</option>
-      </select>
-    </form>
-  </main>
-
+</main>
     <!-- Footer -->
     <footer class="bg-dark text-light text-center py-3 d-flex justify-content-center footer-mobile-margin">
       <div class="container">
@@ -104,7 +77,6 @@
         </div>
       </div>
     </footer>
-</footer>
   </body>
   <!-- SCRIPTS -->
   <script src="./js/main.js"></script>

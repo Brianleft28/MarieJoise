@@ -121,14 +121,16 @@ const razas = [
 // funciones
 
 function inicializarPersonaje() {
+
   const inputName = document.getElementById("inputName");
+  
   if (inputName.value) {
     const nombre = inputName.value.trim();
 
     if (nombre.length >= 3 && nombre.length <= 20) {
       // Guardar el nombre en localStorage
+      
       localStorage.setItem("nombrePersonaje", nombre);
-
       personaje.nombre = nombre;
       startGame.style.display = "none";
       inputName.style.display = "none";
@@ -176,9 +178,9 @@ function mostrarMensaje(mensaje, elementoId) {
 
 // EVENTOS
 btnCrearPj.addEventListener("click", () => {
+  inicializarPersonaje()
   btnCrearPj.style.display = "none";
   inputName.style.display = "none";
-  inicializarPersonaje();
 });
 /// ELEGIR RAZA
 function razaTime() {
@@ -198,7 +200,6 @@ botonElegirRaza.addEventListener("click", () => {
   continuarJuego.style.display = "inline";
   botonElegirRaza.style.display = "none";
   formClass.style.display = "none";
-
   mostrarMensaje(
     `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá tenes información sobre tu raza`,
     'output',
@@ -277,10 +278,10 @@ function mostrarTablaRaza(raza) {
 
   document.getElementById("output2").insertAdjacentHTML("beforeend", tablaHTML);
 }
-
-///////////////////////////
-////// START SECTION //////
-///////////////////////////
+ 
+/////////////////////////// / .
+////// START SECTION ////// /
+/////////////////////////// /
 
 startGame.addEventListener("click", () => {
   // volvemos a mostrar lo necesario para el inicio y el ocultamos el boton de start
@@ -296,16 +297,14 @@ continuarJuego.addEventListener("click", () => {
   outputDiv.style.display = "none";
   titulo.innerHTML = "Despertaste";
   mostrarMensaje(
-    `¡Hola ${personaje.nombre}!. Menos mal despertaste.Mi nombre es Fulanito y te he estado cuidando. Que bien que despertaste! En serio, necesitamos cruzar ese rio y nada mejor que un ${personaje
+    `Anciano: ¡Hola ${personaje.nombre}!. Menos mal despertaste. Mi nombre es Fulanito Fulano y te he estado cuidando. Que bien que despertaste! En serio, necesitamos cruzar ese rio y nada mejor que un ${personaje
       .raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`,
     "output"
-    
   );
-
-  // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable.
+// cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable.
   continuarJuego.addEventListener("click", () => {
     mostrarMensaje(
-      `...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza
+      `Anciano: ...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza
         .nombre} para hacerlo... Te sigo, en serio. ¡En serio!`,
       "output"
     );
