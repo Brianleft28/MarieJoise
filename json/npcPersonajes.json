@@ -1,0 +1,53 @@
+[
+  {
+    "nombre": "Fulano",
+    "origen": "MarieJoise",
+    "apellido": "Fulanito",
+    "habEspecial": "Super Perpeción",
+    "skills": {
+      "Str": 2,
+      "Int": 10,
+      "Skill": 7,
+      "Agi": 3,
+      "Stealth": 5
+    },
+    "objetos": ["Daga de oro", "Ropa vieja", "Libro erótico"],
+    "ocupacion": "Desocupado",
+    "oro": [200]
+  },
+
+  {
+    "nombre": "Abela",
+    "origen": "Joy Land",
+    "apellido": "Piruki",
+    "habEspecial": "Risa Contagiosa",
+    "skills": {
+      "Str": 4,
+      "Int": 7,
+      "Skill": 4,
+      "Agi": 7,
+      "Stealth": 5
+    },
+    "objetos": ["Libro sobre como hacer libros"],
+    "ocupacion": "",
+    "oro": [15]
+  },
+
+  {
+    "nombre": "Murchisio",
+    "origen": "Joy Land",
+    "apellido": "Munipo",
+    "habEspecial": "Regateador",
+    "skills": {
+      "Str": 4,
+      "Int": 7,
+      "Skill": 4,
+      "Agi": 7,
+      "Stealth": 5
+    },
+    "ocupacion": "",
+    "objetos": [""],
+    "oro": [15]
+  }
+    
+]
