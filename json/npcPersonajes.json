@@ -26,5 +26,34 @@
       }
     ],
     "ocupacion": "Mago Jubilado"
+  },
+
+  {
+    "nombre": "",
+    "origen": "",
+    "apellido": "",
+    "habEspecial": "",
+    "skills": {
+        "Str": 0,
+        "Int": 0,
+        "Skill": 0, 
+        "Agi": 0,
+        "Stealth": 0
+    },
+    "objetos":[
+        {
+            "arma": "",
+            "estado": "",
+            "usos": 0
+        },
+        {
+            "libros": ""
+        },
+        {
+            "dinero": "",
+            "cantidad": 0
+        }
+    ],
+    "ocupacion": ""
   }
 ]
