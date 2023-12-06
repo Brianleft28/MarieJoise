@@ -11,43 +11,20 @@
       "Agi": 3,
       "Stealth": 5
     },
-    "objetos": ["Daga de oro", "Ropa vieja", "Libro erótico"],
-    "ocupacion": "Desocupado",
-    "oro": [200]
-  },
-
-  {
-    "nombre": "Abela",
-    "origen": "Joy Land",
-    "apellido": "Piruki",
-    "habEspecial": "Risa Contagiosa",
-    "skills": {
-      "Str": 4,
-      "Int": 7,
-      "Skill": 4,
-      "Agi": 7,
-      "Stealth": 5
-    },
-    "objetos": ["Libro sobre como hacer libros"],
-    "ocupacion": "",
-    "oro": [15]
-  },
-
-  {
-    "nombre": "Murchisio",
-    "origen": "Joy Land",
-    "apellido": "Munipo",
-    "habEspecial": "Regateador",
-    "skills": {
-      "Str": 4,
-      "Int": 7,
-      "Skill": 4,
-      "Agi": 7,
-      "Stealth": 5
-    },
-    "ocupacion": "",
-    "objetos": [""],
-    "oro": [15]
+    "objetos": [
+      {
+        "arma": "Daga de oro",
+        "estado": "Brillando",
+        "usos": 100
+      },
+      {
+        "libros": "Como llegar a viejo y no arrugarme"
+      },
+      {
+        "dinero": "oro",
+        "cantidad": 150
+      }
+    ],
+    "ocupacion": "Mago Jubilado"
   }
-    
 ]
