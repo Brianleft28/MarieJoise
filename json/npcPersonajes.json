@@ -1,5 +1,33 @@
 [
   {
+    "nombre": "",
+    "origen": "",
+    "apellido": "",
+    "habEspecial": "",
+    "skills": {
+      "Str": 0,
+      "Int": 0,
+      "Skill": 0,
+      "Agi": 0,
+      "Stealth": 0
+    },
+    "objetos": [
+      {
+        "arma": "",
+        "estado": "",
+        "usos": 0
+      },
+      {
+        "libros": ""
+      },
+      {
+        "dinero": "",
+        "cantidad": 0
+      }
+    ],
+    "ocupacion": ""
+  },
+  {
     "nombre": "Fulano",
     "origen": "MarieJoise",
     "apellido": "Fulanito",
@@ -27,33 +55,62 @@
     ],
     "ocupacion": "Mago Jubilado"
   },
+  {
+    "nombre": "Pedrito",
+    "origen": "Joy Land",
+    "apellido": "Lousiant",
+    "habEspecial": "Risa Contagiosa",
+    "skills": {
+      "Str": 5,
+      "Int": 5,
+      "Skill": 5,
+      "Agi": 5,
+      "Stealth": 5
+    },
+    "objetos": [
+      {
+        "arma": "Palo de escoba",
+        "estado": "Gastado",
+        "usos": 5
+      },
+      {
+        "libros": "Como reir con estilo"
+      },
+      {
+        "dinero": "Oro",
+        "cantidad": 15
+      }
+    ],
+    "ocupacion": "Librero"
+  },
 
   {
-    "nombre": "",
-    "origen": "",
-    "apellido": "",
-    "habEspecial": "",
+    "nombre": "Maria",
+    "origen": "Joy Land",
+    "apellido": "Lapalida",
+    "habEspecial": "Humo Espeso",
     "skills": {
-        "Str": 0,
-        "Int": 0,
-        "Skill": 0, 
-        "Agi": 0,
-        "Stealth": 0
+      "Str": 5,
+      "Int": 5,
+      "Skill": 5,
+      "Agi": 5,
+      "Stealth": 5
     },
-    "objetos":[
-        {
-            "arma": "",
-            "estado": "",
-            "usos": 0
-        },
-        {
-            "libros": ""
-        },
-        {
-            "dinero": "",
-            "cantidad": 0
-        }
+
+    "objetos": [
+      {
+        "arma": "Peine",
+        "estado": "Reluciente",
+        "usos": 50
+      },
+      {
+        "libros": "Como peinar a un oso con rabia."
+      },
+      {
+        "dinero": "Oro",
+        "cantidad": 25
+      }
     ],
-    "ocupacion": ""
+    "ocupacion": "Librera"
   }
 ]
