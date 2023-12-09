@@ -1,12 +1,11 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-// Cargar el nombre del personaje desde localStorage
+  // Cargar el nombre del personaje desde localStorage
   const nombreGuardado = localStorage.getItem("nombrePersonaje");
   if (nombreGuardado) {
     inputName.value = nombreGuardado;
   }
 });
- 
+
 let botonElegirRaza = document.getElementById("elegirRaza");
 let continuarJuego = document.getElementById("continuarJuego");
 let inputName = document.getElementById("inputName");
@@ -121,15 +120,14 @@ const razas = [
 // funciones
 
 function inicializarPersonaje() {
-
   const inputName = document.getElementById("inputName");
-  
+
   if (inputName.value) {
     const nombre = inputName.value.trim();
 
     if (nombre.length >= 3 && nombre.length <= 20) {
       // Guardar el nombre en localStorage
-      
+
       localStorage.setItem("nombrePersonaje", nombre);
       personaje.nombre = nombre;
       startGame.style.display = "none";
@@ -139,7 +137,7 @@ function inicializarPersonaje() {
       let formClass = document.getElementById("formClass");
       formClass.style.display = "flex";
       titulo.innerHTML = "Elije una raza para tu personaje";
-      
+
       mostrarMensaje(
         `Nombre del personaje establecido como: ${personaje.nombre}`,
         "output"
@@ -178,7 +176,7 @@ function mostrarMensaje(mensaje, elementoId) {
 
 // EVENTOS
 btnCrearPj.addEventListener("click", () => {
-  inicializarPersonaje()
+  inicializarPersonaje();
   btnCrearPj.style.display = "none";
   inputName.style.display = "none";
 });
@@ -189,8 +187,8 @@ function razaTime() {
   titulo.innerHTML = `Selecciona tu raza`;
   if (razaIndex >= 0 && razaIndex < razas.length) {
     personaje.raza = razas[razaIndex];
-  } else if (razaIndex == 0){
-        mostrarMensaje('Información sobre las razas: (en proceso)','output')
+  } else if (razaIndex == 0) {
+    mostrarMensaje("Información sobre las razas: (en proceso)", "output");
   }
 }
 
@@ -201,11 +199,12 @@ botonElegirRaza.addEventListener("click", () => {
   botonElegirRaza.style.display = "none";
   formClass.style.display = "none";
   mostrarMensaje(
-    `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza.nombre}. <br\> Acá tenes información sobre tu raza`,
-    'output',
-    );
-    mostrarTablaRaza(personaje.raza);
-    localStorage.setItem("razaPersonaje", JSON.stringify(personaje.raza));
+    `Perfecto ${personaje.nombre}, entonces tu raza es ${personaje.raza
+      .nombre}. <br\> Acá tenes información sobre tu raza`,
+    "output"
+  );
+  mostrarTablaRaza(personaje.raza);
+  localStorage.setItem("razaPersonaje", JSON.stringify(personaje.raza));
 });
 
 continuarJuego.addEventListener("click", () => {
@@ -227,7 +226,6 @@ continuarJuego.addEventListener("click", () => {
     );
     let choises = document.getElementById("choises__div");
     choises.style.display = "flex";
-
   });
 });
 
@@ -275,7 +273,7 @@ function mostrarTablaRaza(raza) {
 
   document.getElementById("output2").insertAdjacentHTML("beforeend", tablaHTML);
 }
- 
+
 /////////////////////////// / .
 ////// START SECTION ////// /
 /////////////////////////// /
@@ -299,39 +297,72 @@ continuarJuego.addEventListener("click", () => {
     "output"
   );
 
-
-// cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable.
+  // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable.
   continuarJuego.addEventListener("click", () => {
     mostrarMensaje(
-      `Anciano: ...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza
-        .nombre} para hacerlo... Te sigo, en serio. ¡En serio!`,
+      `Anciano: ...necesitamos cruzar ese rio y nada mejor que un ${personaje
+        .raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`,
       "output"
     );
+    const continuarJuego2 = document.querySelector('#continuarJuego2');
     let choises = document.getElementById("choises__div");
     choises.style.display = "flex";
+    continuarJuego2.style.display = 'flex';
+    continuarJuego.style.display = 'none';
+
     mostrarMensaje("Cruzar nadando y dejar al anciano", "ch1"); // OP 1
     mostrarMensaje("Cargar a cuestas al anciano y cruzar", "ch2"); // OP 2
     mostrarMensaje("Quizás sea una mejor idea no intentarlo...", "ch3"); // OP 3
     mostrarMensaje("Matar al anciano", "ch4"); // OP 4
-  }); 
+  });
 });
 
+const evento = () => {
+  const choises = document.getElementById("choises");
+  // Verificar que el div esté visible (display sea 'flex')
+  if (choises) {
 
-// consecuencia 
-continuarJuego.addEventListener('click', () =>{
-  const choises = document.getElementById('choises__div')
-  choises.style.display = 'none'
+    // Opcion 1   
+
+    // si el valor del select es "1" entonces // 
+    // redondea hacia abajo un numero random entre 0 y 1 multiplicado por el atributo "Agi" //
+    // de la raza que hayamos elegido, y si ese resultado es mayor a 2 la acción se realiza. //
+    // Sino fracasa, la idea es que mientras más bajo sea más terrible será la consecuencia, y lo mismo //
+    // si es un número alto pero en torno al beneficio. //
+
+    if (choises.value === "1") {
+      if (Math.floor(Math.random() * personaje.raza.Agi * 10 / 1.5) >= 12) {
+        mostrarMensaje(
+          'Haz cruzado el río con éxito y dejado al anciano atrás. <br/><br/> Anciano: Eh! No me dejes eh!', 'output');
+          // ocultamos y mostramos para la proxima acción.
+          btnJuego2.style.display = 'none';
+          continuarJuego.style.display = 'flex';
+          choises.style.display = 'none';
 
 
-})
-if(mostrarMensaje.value){
-  const opcion1 = document.getElementById('ch1');
-  const opcion2 = document.getElementById('ch2');
-  const opcion3 = document.getElementById('ch3');
-  const opcion4 = document.getElementById('ch4');
 
-  if (opcion1 = `Cruzar nadando y dejar al anciano"`){
 
+      } else {
+        console.error('Te has ahogado en el intento. <br/> Anciano: Jajajaja, te querías escapar sin eh. Que idiota, en serio!');
+      }
+    } else if (choises.value === "2") {
+      console.error("Han cruzado el río con éxito");
+
+
+
+
+    } else if (choises.value === "3") {
+      console.info('Anciano: Pero si con esa cara de miedo, desde ya te digo que mejor ni lo intentemos!')
+    }
+
+
+
+  } else {
+    console.error('Hay algo mal');
   }
 }
+
+const btnJuego2 = document.querySelector('#continuarJuego2');
+btnJuego2.addEventListener('click', evento); // No uses 'evento()' aquí
+
 
