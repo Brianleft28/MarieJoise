@@ -227,10 +227,7 @@ continuarJuego.addEventListener("click", () => {
     );
     let choises = document.getElementById("choises__div");
     choises.style.display = "flex";
-    mostrarMensaje("Cruzar el rio solo", "ch1"); // OP 1
-    mostrarMensaje("Cargar a cuestas y cruzar el rio", "ch2"); // OP 2
-    mostrarMensaje("No cruzar el rio.", "ch3"); // OP 3
-    mostrarMensaje("Preguntar que hay al otro lado del rio", "ch4"); // OP 4
+
   });
 });
 
@@ -301,6 +298,8 @@ continuarJuego.addEventListener("click", () => {
       .raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`,
     "output"
   );
+
+
 // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable.
   continuarJuego.addEventListener("click", () => {
     mostrarMensaje(
@@ -316,4 +315,23 @@ continuarJuego.addEventListener("click", () => {
     mostrarMensaje("Matar al anciano", "ch4"); // OP 4
   }); 
 });
+
+
+// consecuencia 
+continuarJuego.addEventListener('click', () =>{
+  const choises = document.getElementById('choises__div')
+  choises.style.display = 'none'
+
+
+})
+if(mostrarMensaje.value){
+  const opcion1 = document.getElementById('ch1');
+  const opcion2 = document.getElementById('ch2');
+  const opcion3 = document.getElementById('ch3');
+  const opcion4 = document.getElementById('ch4');
+
+  if (opcion1 = `Cruzar nadando y dejar al anciano"`){
+
+  }
+}
 
