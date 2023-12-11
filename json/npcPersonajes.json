@@ -4,13 +4,14 @@
     "origen": "",
     "apellido": "",
     "habEspecial": "",
-    "skills": {
+    "raza": ["",{ 
       "Str": 0,
       "Int": 0,
       "Skill": 0,
       "Agi": 0,
       "Stealth": 0
-    },
+    }],
+   
     "objetos": [
       {
         "arma": "",

@@ -77,11 +77,12 @@ body {
     min-width: 100%; ;
   }
 
+  p {
+    text-align: justify;
+  }
     
   #botones { 
     order: 2;
   }
-  #choises { 
-    order: 0;
-  }
+
   
