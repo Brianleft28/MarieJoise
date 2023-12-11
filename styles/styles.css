@@ -77,5 +77,8 @@ body {
     min-width: 100%; ;
   }
 
-  
+
+  #botones { 
+    order: 2;
+  }
   

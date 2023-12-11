@@ -363,6 +363,6 @@ const evento = () => {
 }
 
 const btnJuego2 = document.querySelector('#continuarJuego2');
-btnJuego2.addEventListener('click', evento); // No uses 'evento()' aquí
+btnJuego2.addEventListener('click', evento); // 
 
 
