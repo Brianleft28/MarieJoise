@@ -338,12 +338,14 @@ const evento = () => {
           btnJuego2.style.display = 'none';
           continuarJuego.style.display = 'flex';
           choises.style.display = 'none';
+          const choisesDiv = document.getElementById('choises__div');
+          choisesDiv.style.display = 'none';
 
 
 
 
-      } else {
-        console.error('Te has ahogado en el intento. <br/> Anciano: Jajajaja, te querías escapar sin eh. Que idiota, en serio!');
+      } else if(Math.floor(Math.random() * personaje.raza.Skill)){
+
       }
     } else if (choises.value === "2") {
       console.error("Han cruzado el río con éxito");
