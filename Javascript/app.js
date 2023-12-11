@@ -26,7 +26,6 @@ let personaje = {
   raza: {},
   objeto: [],
   ocupacion: {},
-  
 }
 
 // razas array
@@ -298,7 +297,7 @@ continuarJuego.addEventListener('click', () => {
   // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable.
   continuarJuego.addEventListener('click', () => {
     mostrarMensaje(
-      `Anciano: ...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`,
+      `Fulanito Fulano: ...necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Vamos!!! Cruzanos, te sigo, en serio. ¡En serio!`,
       'output'
     )
     const continuarJuego2 = document.querySelector('#continuarJuego2')
@@ -327,40 +326,50 @@ const evento = () => {
     if (choises.value === '1') {
       if (Math.floor((Math.random() * personaje.raza.Agi * 10) / 1.5) >= 12) {
         mostrarMensaje(
-          'Haz cruzado el río con éxito y dejado al anciano atrás. <br/> Anciano: Eh! No me dejes eh! <br/> <br/> <i> Has dejado al viejo atrás. Asique elegiste el camino deL MAL <i/><br/> Un camino se muestra frente al río. ',
+          'Haz cruzado el río con éxito y dejado al anciano atrás. <br/> Anciano: Eh! No me dejes eh! <br/> <br/> <i> Has dejado al viejo atrás. Asique elegiste el camino deL MAL. <br/><br/> Un camino se muestra frente al río.',
           'output'
-          )
-          // ocultamos y mostramos para la proxima acción.
-          btnJuego2.style.display = 'none'
-          continuarJuego.style.display = 'none'
-          // aca deberia crear un elemento HTML que sea un button type;
-          choises.style.display = 'none'
-          const choisesDiv = document.getElementById('choises__div');
-          choisesDiv.style.display = 'none'
-          
-          const avanzarBtn = document.createElement('button');
-          avanzarBtn.className = 'btnAvanzar'
-        } else {
-          mostrarMensaje(
-            'Te tropezaste al inspeccionar la profundidad del río. <br/><br/> ',
-            'output'
-            )
-            // ocultamos y mostramos para la proxima acción.
-            btnJuego2.style.display = 'none'
-            continuarJuego.style.display = 'none'
-            // aca deberia crear un elemento HTML que sea un button type;
-            choises.style.display = 'none'
-            const choisesDiv = document.getElementById('choises__div');
-            choisesDiv.style.display = 'none'
-            
-            const avanzarBtn = document.createElement('button');
-            avanzarBtn.className = 'btnAvanzar'
-        }
+        )
+        // ocultamos y mostramos para la proxima acción.
+        btnJuego2.style.display = 'none'
+        continuarJuego.style.display = 'none'
+        // aca deberia crear un elemento HTML que sea un button type;
+        const choisesDiv = document.getElementById('choises__div')
+        choisesDiv.style.display = 'none'
+        const divCont = document.getElementById('botones')
+        const avanzarBtn = document.createElement('button')
+        avanzarBtn.className = 'btnAvanzar'
+        avanzarBtn.innerText = 'Avanzar'
+        divCont.appendChild(avanzarBtn)
+        avanzarBtn.classList.add('btn-primary', 'btn');
+
+        /// SI NO PASA ESTO ///
+      } else {
+        mostrarMensaje(
+          `Te tropezaste al inspeccionar la profundidad del río. <br/><br/> Fulano Fulanito: <i> Ja, ja ja! Tal parece que el señor ${personaje.raza.nombre} quiso irse sin mí. Meh, tonterias. Que la corriente te castigue. Nos volveremos a ver, idiota. Y esta vez te lo digo en serio.<i/>`,
+          'output'
+        )
+        // ocultamos y mostramos para la proxima acción.
+        btnJuego2.style.display = 'none'
+        continuarJuego.style.display = 'none'
+        choises.style.display = 'none'
+        // aca deberia crear un elemento HTML que sea un button type;
+        const choisesDiv = document.getElementById('choises__div')
+        choisesDiv.style.display = 'none'
+        const divCont = document.getElementById('botones')
+        const avanzarBtn = document.createElement('button')
+        avanzarBtn.className = 'btnAvanzar'
+        avanzarBtn.innerText = 'Avanzar'
+        divCont.appendChild(avanzarBtn)
+        // le aplicamos estilos al boton, más que nada la clase btn-primary de BOOTSTRAP
+        avanzarBtn.classList.add('btn-primary', 'btn');
+
+        
       }
     }
   }
+}
 
 const btnJuego2 = document.querySelector('#continuarJuego2')
-btnJuego2.addEventListener('click', evento) 
+btnJuego2.addEventListener('click', evento)
 
 //
