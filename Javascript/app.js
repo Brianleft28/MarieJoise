@@ -3,7 +3,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const nombreGuardado = localStorage.getItem('nombrePersonaje')
   if (nombreGuardado) {
     inputName.value = nombreGuardado
+    
   }
+
+  // aprovechamos la misma escucha de evento para consumir un JSON con fetch
+
+  const url = 'https://github.com/Brianleft28/FetchJSON'
+
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error de status: ${response.status}`)
+      }
+      return response.json()
+    })
+
+    .then((data) => {
+      console.log('Datos del JSON: ', data)
+    })
+    
+    .catch(error => {
+      console.error('Error de fetch: ', error)
+    })
 })
 
 let botonElegirRaza = document.getElementById('elegirRaza')
@@ -292,7 +313,7 @@ continuarJuego.addEventListener('click', () => {
   mostrarMensaje(
     `Anciano: ¡Hola ${personaje.nombre}!. Menos mal despertaste. Mi nombre es Fulanito Fulano y te he estado cuidando. Que bien que despertaste! En serio, necesitamos cruzar ese rio y nada mejor que un ${personaje.raza.nombre} para hacerlo... Te sigo, en serio. ¡En serio!`,
     'output'
-  )
+  );
 
   // cuando volvemos a tocar ocultamos el botón, y abrimos el menu desplegable.
   continuarJuego.addEventListener('click', () => {
@@ -330,25 +351,28 @@ const evento = () => {
           'output'
         )
         // ocultamos y mostramos para la proxima acción.
-        btnJuego2.style.display = 'none';
-        continuarJuego.style.display = 'none';
+        btnJuego2.style.display = 'none'
+        continuarJuego.style.display = 'none'
         // aca deberia crear un elemento HTML que sea un button type
-        const choisesDiv = document.getElementById('choises__div');
-        choisesDiv.style.display = 'none';
-        const divCont = document.getElementById('botones');
-        const avanzarBtn = document.createElement('button');
-        avanzarBtn.className = 'btnAvanzar';
-        avanzarBtn.innerText = 'Avanzar';
+        const choisesDiv = document.getElementById('choises__div')
+        choisesDiv.style.display = 'none'
+        const divCont = document.getElementById('botones')
+        const avanzarBtn = document.createElement('button')
+        avanzarBtn.className = 'btnAvanzar'
+        avanzarBtn.innerText = 'Avanzar'
         divCont.appendChild(avanzarBtn)
-        avanzarBtn.classList.add('btn-primary', 'btn');
+        avanzarBtn.classList.add('btn-primary', 'btn')
 
-            // el boton de avanzar lo manejamos dentro de la función 
-            // para continuar por acá. A no ser que lo defina fuera de la funcion
-            // y en esta solo lo llame. 
+        // el boton de avanzar lo manejamos dentro de la función
+        // para continuar por acá. A no ser que lo defina fuera de la funcion
+        // y en esta solo lo llame.
 
         avanzarBtn.addEventListener('click', () => {
-          titulo.innerHTML = "Del otro lado del río"
-          mostrarMensaje('La verdad que va a sonar re feo lo que estoy por decir. Pero tengo que dejar de meterme cosas en la boca.','output') 
+          titulo.innerHTML = 'Del otro lado del río'
+          mostrarMensaje(
+            'La verdad que va a sonar re feo lo que estoy por decir. Pero tengo que dejar de meterme cosas en la boca.gi',
+            'output'
+          )
         })
 
         /// SI NO PASA ESTO ///
@@ -370,8 +394,7 @@ const evento = () => {
         avanzarBtn.innerText = 'Avanzar'
         divCont.appendChild(avanzarBtn)
         // le aplicamos estilos al boton, más que nada la clase btn-primary de BOOTSTRAP
-        avanzarBtn.classList.add('btn-primary', 'btn');
-
+        avanzarBtn.classList.add('btn-primary', 'btn')
       }
     }
   }
