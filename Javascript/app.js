@@ -285,7 +285,7 @@ startGame.addEventListener('click', () => {
 })
 
 continuarJuego.addEventListener('click', () => {
-  mostrarMensaje(-'Hola', 'output')
+  mostrarMensaje('Hola', 'output')
   outputDiv = document.getElementById('output2')
   outputDiv.style.display = 'none'
   titulo.innerHTML = 'Despertaste'
@@ -330,22 +330,31 @@ const evento = () => {
           'output'
         )
         // ocultamos y mostramos para la proxima acción.
-        btnJuego2.style.display = 'none'
-        continuarJuego.style.display = 'none'
-        // aca deberia crear un elemento HTML que sea un button type;
-        const choisesDiv = document.getElementById('choises__div')
-        choisesDiv.style.display = 'none'
-        const divCont = document.getElementById('botones')
-        const avanzarBtn = document.createElement('button')
-        avanzarBtn.className = 'btnAvanzar'
-        avanzarBtn.innerText = 'Avanzar'
+        btnJuego2.style.display = 'none';
+        continuarJuego.style.display = 'none';
+        // aca deberia crear un elemento HTML que sea un button type
+        const choisesDiv = document.getElementById('choises__div');
+        choisesDiv.style.display = 'none';
+        const divCont = document.getElementById('botones');
+        const avanzarBtn = document.createElement('button');
+        avanzarBtn.className = 'btnAvanzar';
+        avanzarBtn.innerText = 'Avanzar';
         divCont.appendChild(avanzarBtn)
         avanzarBtn.classList.add('btn-primary', 'btn');
+
+            // el boton de avanzar lo manejamos dentro de la función 
+            // para continuar por acá. A no ser que lo defina fuera de la funcion
+            // y en esta solo lo llame. 
+
+        avanzarBtn.addEventListener('click', () => {
+          titulo.innerHTML = "Del otro lado del río"
+          mostrarMensaje('La verdad que va a sonar re feo lo que estoy por decir. Pero tengo que dejar de meterme cosas en la boca.','output') 
+        })
 
         /// SI NO PASA ESTO ///
       } else {
         mostrarMensaje(
-          `Te tropezaste al inspeccionar la profundidad del río. <br/><br/> Fulano Fulanito: <i> Ja, ja ja! Tal parece que el señor ${personaje.raza.nombre} quiso irse sin mí. Meh, tonterias. Que la corriente te castigue. Nos volveremos a ver, idiota. Y esta vez te lo digo en serio.<i/>`,
+          `Te tropezaste al inspeccionar la profundidad del río. <br/><br/> Fulano Fulanito: <i> Ja, ja ja! Tal parece que el señor ${personaje.raza.nombre} quiso irse sin mí. Meh, tonterias. Que la corriente te castigue. Nos volveremos a ver, ${personaje.nombre}. Y esta vez te lo digo en serio.<i/>`,
           'output'
         )
         // ocultamos y mostramos para la proxima acción.
@@ -363,7 +372,6 @@ const evento = () => {
         // le aplicamos estilos al boton, más que nada la clase btn-primary de BOOTSTRAP
         avanzarBtn.classList.add('btn-primary', 'btn');
 
-        
       }
     }
   }
