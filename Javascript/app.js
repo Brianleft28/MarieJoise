@@ -371,7 +371,7 @@ const evento = () => {
         avanzarBtn.addEventListener('click', () => {
           titulo.innerHTML = 'Del otro lado del río'
           mostrarMensaje(
-            'La verdad que va a sonar re feo lo que estoy por decir. Pero tengo que dejar de meterme cosas en la boca.gi',
+            'Texto de ejemplo.',
             'output'
           )
         })
