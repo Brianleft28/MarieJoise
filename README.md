@@ -4,7 +4,7 @@
     Simulador de juego de rol simple: 
 </h2>
 </br>
-<h2>Narración interactiva cuantificada.</h2>
+<p>Narración interactiva cuantificada.</p>
 
 
 <p> Tecnologias:
