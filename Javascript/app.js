@@ -19,7 +19,7 @@ async function fetchData() {
     const response = await fetch(url)
     
     if(!response.ok) {
-      throw new error(`Se ha producido un error. Código: ${response.status}`);
+      throw new Error(`Se ha producido un error. Código: ${response.status}`);
     }
       const data = await response.json();
       console.log(data)
@@ -339,6 +339,8 @@ continuarJuego.addEventListener('click', () => {
 })
 
 /// esto es lo que pasaría si intentamos elegir la primer opcion del menu desplegable
+const probabilidadExito = Math.floor(Math.random() * (personaje.raza.Agi * 10) / 1.5);
+
 const evento = () => {
   const choises = document.getElementById('choises')
   if (choises) {
@@ -350,7 +352,7 @@ const evento = () => {
     // si es un número alto pero en torno al beneficio. //
     // Voy a establecer el 12 como el numero intermedio para que se realice una acción  //
     if (choises.value === '1') {
-      if (Math.floor((Math.random() * personaje.raza.Agi * 10) / 1.5) >= 12) {
+      if (probabilidadExito >= 12) {
         mostrarMensaje(
           'Haz cruzado el río con éxito y dejado al anciano atrás. <br/> Anciano: Eh! No me dejes eh! <br/> <br/> <i> Has dejado al viejo atrás. Asique elegiste el camino deL MAL. <br/><br/> Un camino se muestra frente al río.',
           'output'
