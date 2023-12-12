@@ -334,6 +334,7 @@ continuarJuego.addEventListener('click', () => {
   })
 })
 
+/// esto es lo que pasaría si intentamos elegir la primer opcion del menu desplegable
 const evento = () => {
   const choises = document.getElementById('choises')
   if (choises) {
