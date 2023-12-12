@@ -1,31 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
   // Cargar el nombre del personaje desde localStorage
   const nombreGuardado = localStorage.getItem('nombrePersonaje')
   if (nombreGuardado) {
     inputName.value = nombreGuardado
+  }
+})
+
+// traemos un JSON con información de personajes y plantillas para crear nuevos
+// como traerlo de GITHUB me suponia problemas de CORS 
+// pude lograrlo con cdn.jsdelivr.net/gh
+
+const url = 'https://cdn.jsdelivr.net/gh/Brianleft28/FetchJSON/npcPersonajes.json';
+fetchData();
+
+async function fetchData() {
+  try {
+    const response = await fetch(url)
     
+    if(!response.ok) {
+      throw new error(`Se ha producido un error. Código: ${response.status}`);
+    }
+      const data = await response.json();
+      console.log(data)
+  } 
+  catch(error){
+    console.error('Error al obtener el archivo JSON de GITHUB.', error)
   }
 
-  // aprovechamos la misma escucha de evento para consumir un JSON con fetch
+}
 
-  const url = 'https://github.com/Brianleft28/FetchJSON'
-
-  fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Error de status: ${response.status}`)
-      }
-      return response.json()
-    })
-
-    .then((data) => {
-      console.log('Datos del JSON: ', data)
-    })
-    
-    .catch(error => {
-      console.error('Error de fetch: ', error)
-    })
-})
 
 let botonElegirRaza = document.getElementById('elegirRaza')
 let continuarJuego = document.getElementById('continuarJuego')
